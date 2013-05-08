@@ -1,2 +1,3 @@
 .idea/
 .gitignore
+tests/wp-tests-config.php
