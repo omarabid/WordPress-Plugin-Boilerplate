@@ -1,0 +1,1 @@
+Put images that you'll display in the admin panel here
