@@ -9,7 +9,7 @@
 /*
   Plugin Name: PluginBoilerplate
   Plugin URI: http://omarabid.com
-  Description: .
+  Description: Plugin Description.
   Author: Abid Omar
   Author URI: http://omarabid.com
   Version: 1.0
@@ -26,7 +26,8 @@ if (!class_exists('wp_pb')) {
     /**
      * The main class and initialization point of the plugin.
      * Change the class name to wp_xxx where xxx relates to your
-     * plugin name. For example, pb = pluginboilerplate
+     * plugin name. Try to avoid using popular and common words
+     * to avoid collusion with other plugins.
      */
     class wp_pb
     {
@@ -73,7 +74,7 @@ if (!class_exists('wp_pb')) {
             //
             // 4. Load Widget
             //
-            //add_action('widgets_init', create_function('', 'register_widget("pb_widget");'));
+            add_action('widgets_init', array(&$this, 'register_widget'));
 
             //
             // 5. i18n
@@ -138,6 +139,7 @@ if (!class_exists('wp_pb')) {
                 require_once('admin/admin.php');
             }
             // Front-End Site
+            require_once('inc/widget.php');
         }
 
         /**
@@ -164,6 +166,14 @@ if (!class_exists('wp_pb')) {
 
         }
 
+        /**
+         * Use this function to register the different widgets for your plugin
+         */
+        public function register_widget()
+        {
+            register_widget("wp_pb_widget");
+        }
+
 
         /**
          * Internationalization
@@ -174,7 +184,7 @@ if (!class_exists('wp_pb')) {
         }
 
         /**
-         * This function is responsible for starting the plug-in
+         * This function is responsible for starting the plug-in main functionality
          */
         public function start()
         {
