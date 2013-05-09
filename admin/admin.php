@@ -25,7 +25,7 @@ if (!class_exists('wp_pb_admin')) {
             //
             // 2. Load Scripts and Styles
             //
-            if (isset($_GET['page']) && ($_GET['page'] === 'page-id-1' || $_GET['page'] === 'page-id-2')) {
+            if (isset($_GET['page'])) {
                 add_action('admin_print_scripts', array(&$this, 'load_scripts'));
                 add_action('admin_print_styles', array(&$this, 'load_styles'));
             }
@@ -82,7 +82,12 @@ if (!class_exists('wp_pb_admin')) {
          */
         public function load_scripts()
         {
-
+            switch ($_GET['page']) {
+                case 'page-id-1':
+                    break;
+                case 'page-id-2':
+                    break;
+            }
         }
 
         /**
@@ -90,7 +95,12 @@ if (!class_exists('wp_pb_admin')) {
          */
         public function load_styles()
         {
-
+            switch ($_GET['page']) {
+                case 'page-id-1':
+                    break;
+                case 'page-id-2':
+                    break;
+            }
         }
 
         /**
@@ -145,7 +155,7 @@ if (!class_exists('wp_pb_admin')) {
                         'id' => 'my_help_tab',
                         'title' => 'Help',
                         'content' => "Page 2 Help"));
-                   break;
+                    break;
             }
         }
     }
