@@ -116,7 +116,7 @@ if (!class_exists('wp_pb')) {
         }
 
         /**
-         * This function define constants that are needed across the plug-in.
+         * Define constants needed across the plug-in.
          */
         private function define_constants()
         {
@@ -129,7 +129,7 @@ if (!class_exists('wp_pb')) {
         }
 
         /**
-         * This function load other PHP files that required by the plug-in
+         * Loads PHP files that required by the plug-in
          */
         private function load_dependencies()
         {
@@ -139,11 +139,15 @@ if (!class_exists('wp_pb')) {
                 require_once('admin/admin.php');
             }
             // Front-End Site
+            if (!is_admin()) {
+              
+            }
+            // Global
             require_once('inc/widget.php');
         }
 
         /**
-         * This function is called every time the plug-in is activated.
+         * Called every time the plug-in is activated.
          */
         public function activate()
         {
@@ -151,7 +155,7 @@ if (!class_exists('wp_pb')) {
         }
 
         /**
-         * This function is called when the plug-in is deactivated.
+         * Called when the plug-in is deactivated.
          */
         public function deactivate()
         {
@@ -159,7 +163,7 @@ if (!class_exists('wp_pb')) {
         }
 
         /**
-         * This function is called when the plug-in is uninstalled
+         * Called when the plug-in is uninstalled
          */
         static function uninstall()
         {
@@ -167,7 +171,7 @@ if (!class_exists('wp_pb')) {
         }
 
         /**
-         * Use this function to register the different widgets for your plugin
+         * Register the widgets
          */
         public function register_widget()
         {
@@ -184,7 +188,7 @@ if (!class_exists('wp_pb')) {
         }
 
         /**
-         * This function is responsible for starting the plug-in main functionality
+         * Starts the plug-in main functionality
          */
         public function start()
         {
