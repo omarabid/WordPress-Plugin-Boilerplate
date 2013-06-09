@@ -12,6 +12,7 @@ if (!defined('ABSPATH')) {
 if (!class_exists('wp_pb_admin')) {
     class wp_pb_admin
     {
+        static $pages = array();
         /**
          * Creates the admin panel
          */
@@ -51,14 +52,12 @@ if (!class_exists('wp_pb_admin')) {
          */
         public function admin_menu()
         {
-            global $page1;
-            global $page2;
             // Create a top menu page
             add_menu_page('WordPress Plugin BoilerPlate', 'Plugin', 'manage_options', 'page-id-1', array(&$this, 'menu_hook'));
 
             // Create Submenus
-            $page1 = add_submenu_page('page-id-1', 'WordPress Plugin BoilerPlate', 'Page 1', 'manage_options', 'page-id-1', array(&$this, 'menu_hook'));
-            $page2 = add_submenu_page('page-id-1', 'WordPress Plugin BoilerPlate', 'Page 2', 'manage_options', 'page-id-2', array(&$this, 'menu_hook'));
+            self::$pages['page-1'] = add_submenu_page('page-id-1', 'WordPress Plugin BoilerPlate', 'Page 1', 'manage_options', 'page-id-1', array(&$this, 'menu_hook'));
+            self::$pages['page-2'] = add_submenu_page('page-id-1', 'WordPress Plugin BoilerPlate', 'Page 2', 'manage_options', 'page-id-2', array(&$this, 'menu_hook'));
         }
 
         /**
@@ -66,12 +65,13 @@ if (!class_exists('wp_pb_admin')) {
          */
         public function menu_hook()
         {
-            switch ($_GET['page']) {
+            $screen = get_current_screen();
+            switch ($screen->id) {
                 default:
-                case 'page-id-1':
+                case self::$pages['page-1']:
                     echo 'Page 1';
                     break;
-                case 'page-id-2':
+                case self::$pages['page-2']:
                     echo 'Page 2';
                     break;
             }
@@ -82,10 +82,11 @@ if (!class_exists('wp_pb_admin')) {
          */
         public function load_scripts()
         {
-            switch ($_GET['page']) {
-                case 'page-id-1':
+            $screen = get_current_screen();
+            switch ($screen->id) {
+                case self::$pages['page-1']:
                     break;
-                case 'page-id-2':
+                case self::$pages['page-2']:
                     break;
             }
         }
@@ -95,10 +96,11 @@ if (!class_exists('wp_pb_admin')) {
          */
         public function load_styles()
         {
-            switch ($_GET['page']) {
-                case 'page-id-1':
+            $screen = get_current_screen();
+            switch ($screen->id) {
+                case self::$pages['page-1']:
                     break;
-                case 'page-id-2':
+                case self::$pages['page-2']:
                     break;
             }
         }
@@ -140,17 +142,15 @@ if (!class_exists('wp_pb_admin')) {
          */
         public function showhelp()
         {
-            global $page1;
-            global $page2;
             $screen = get_current_screen();
             switch ($screen->id) {
-                case $page1:
+                case self::$pages['page-1']:
                     $screen->add_help_tab(array(
                         'id' => 'my_help_tab',
                         'title' => 'Help',
                         'content' => "Page 1 Help"));
                     break;
-                case $page2:
+                case self::$pages['page-2']:
                     $screen->add_help_tab(array(
                         'id' => 'my_help_tab',
                         'title' => 'Help',
