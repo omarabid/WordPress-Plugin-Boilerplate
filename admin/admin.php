@@ -12,6 +12,10 @@ if (!defined('ABSPATH')) {
 if (!class_exists('wp_pb_admin')) {
     class wp_pb_admin
     {
+        /**
+         * Admin Panel Pages
+         * @var array
+         */
         static $pages = array();
 
         /**
@@ -27,10 +31,9 @@ if (!class_exists('wp_pb_admin')) {
             //
             // 2. Load Scripts and Styles
             //
-            if (isset($_GET['page'])) {
-                add_action('admin_print_scripts', array(&$this, 'load_scripts'));
-                add_action('admin_print_styles', array(&$this, 'load_styles'));
-            }
+            add_action('admin_print_scripts', array(&$this, 'load_scripts'));
+            add_action('admin_print_styles', array(&$this, 'load_styles'));
+
 
             //
             // 3. Generate Settings and template forms
