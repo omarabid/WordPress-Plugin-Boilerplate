@@ -13,6 +13,7 @@ if (!class_exists('wp_pb_admin')) {
     class wp_pb_admin
     {
         static $pages = array();
+
         /**
          * Creates the admin panel
          */
@@ -85,6 +86,7 @@ if (!class_exists('wp_pb_admin')) {
             $screen = get_current_screen();
             switch ($screen->id) {
                 case self::$pages['page-1']:
+                    wp_enqueue_script('pb-script-1', PB_URLPATH . 'admin/files/js/script.js');
                     break;
                 case self::$pages['page-2']:
                     break;
@@ -99,6 +101,7 @@ if (!class_exists('wp_pb_admin')) {
             $screen = get_current_screen();
             switch ($screen->id) {
                 case self::$pages['page-1']:
+                    wp_enqueue_style('pb-script-1', PB_URLPATH . 'admin/files/css/style.css');
                     break;
                 case self::$pages['page-2']:
                     break;
