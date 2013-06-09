@@ -14,7 +14,16 @@ The idea is that you don't need to remember or have a check-list of best practic
 
 The plugin has a simple Admin panel class. It has two admin pages, and add a submenu to the WordPress Admin bar.
 
-The plugin structure makes it quite easy to extend the plugin with new admin pages. 
+The plugin structure makes it quite easy to extend the plugin with new admin pages.
+
+#### Available controls
+
+The boilerplate comes with many controls that you can integrate with the WordPress Settings API.
+
+* textbox
+* textarea
+* checkbox
+* button
 
 ### Widget Class
 

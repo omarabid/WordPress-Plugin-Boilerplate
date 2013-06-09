@@ -14,6 +14,95 @@ if (!defined('ABSPATH')) {
 if (!class_exists('wp_admin_forms')) {
     class wp_admin_forms
     {
+        /**
+         * Renders Section description
+         */
+        static function section_description()
+        {
+            echo '';
+        }
 
+        /**
+         * Renders a TextBox
+         *
+         * @param array $args
+         */
+        static function textbox($args)
+        {
+            // Defaults init.
+            $default = array('id' => '', 'text' => '', 'value' => '', 'settings' => '');
+            $args = array_merge($default, $args);
+
+            // Current Status
+            $settings = get_option($args['settings']);
+            if (isset($settings[$args['id']])) {
+                $args['value'] = $settings[$args['id']];
+            }
+
+            // Display the control
+            echo '<input name="' . $args['settings'] . '[' . $args['id'] . ']" id="' . $args['id'] . '" value="' . $args['value'] . '" > ' . $args['text'];
+        }
+
+        /**
+         * Renders a TextArea
+         *
+         * @param $args
+         */
+        static function textarea($args)
+        {
+            // Defaults init.
+            $default = array('id' => '', 'text' => '', 'value' => '', 'settings' => '');
+            $args = array_merge($default, $args);
+
+            // Current Status
+            $settings = get_option($args['settings']);
+            if (isset($settings[$args['id']])) {
+                $args['value'] = $settings[$args['id']];
+            }
+
+            // Display the control
+            echo '<textarea name="' . $args['settings'] . '[' . $args['id'] . ']" id="' . $args['id'] . '">' . $args['value'] . '</textarea> ' . $args['text'];
+        }
+
+        /**
+         * Renders a Checkbox
+         *
+         * @param $args
+         */
+        static function checkbox($args)
+        {
+            // Defaults init.
+            $default = array('id' => '', 'text' => '', 'checked' => '', 'settings' => '');
+            $args = array_merge($default, $args);
+
+            // Current Status
+            $settings = get_option($args['settings']);
+            if (isset($settings[$args['id']])) {
+                $args['checked'] = 'checked';
+            }
+
+            // Display the control
+            echo '<input name="' . $args['settings'] . '[' . $args['id'] . ']" id="' . $args['id'] . '" ' . $args['checked'] . ' type="checkbox" > ' . $args['text'];
+        }
+
+        /**
+         * Renders a Button
+         *
+         * @param $args
+         */
+        static function button($args)
+        {
+            // Defaults init.
+            $default = array('id' => '', 'text' => '', 'value' => '', 'class' => 'button-primary');
+            $args = array_merge($default, $args);
+
+            // Set the button query
+            $params = array_merge($_GET, array('action' => $args['id']));
+            $query_string = http_build_query($params);
+            $url = 'admin.php?' . $query_string;
+
+            // Display the control
+            echo '<a href="' . $url . '" class="' . $args['class'] . '">' . $args['value'] . '</a> ' . $args['text'];
+        }
     }
 }
