@@ -31,13 +31,15 @@ A simple and functional widget class is also available.
 
 ## Unit Testing
 
-The plugin uses [WordPress Unit Tests](http://unit-tests.trac.wordpress.org/) to implement Unit Testing. The WordPress tests are removed, though.
+The plugin uses [WordPress Unit Tests](http://unit-tests.trac.wordpress.org/) to implement Unit Testing. 
 
-The tests should be put in `tests/tests` and to run unit testing, just type `phpunit` inside the `tests` directory. You'll need to create a config file before being able to run the tests. You'll also need a seperate database (preferrably) for fresh installations of WordPress.
+The tests should be put in `tests/tests` and to run unit testing, just type `phpunit` inside the `tests` directory. Unit Testing is implemented by the [WP-CLI](http://wp-cli.org/blog/plugin-unit-tests.html). Read and follow the tutorial to create your own version of the testing suite.
 
-For more information, check the README.txt file associated with the tests library.
+You don't need, however, to create the `tests` directory as it's included with the boilerplate. You do need to update the `WP_TESTS_DIR` environement variable, though.
 
-P.S.: It's not a good idea to include the Unit Tests in the production version.
+```
+export WP_TESTS_DIR=/path/to/wp/
+```
 
 ## SASS and COFFEESCRIPT
 
