@@ -136,6 +136,7 @@ if (!class_exists('wp_pb')) {
 		 // Admin Panel
 		 if (is_admin()) {
 			require_once('admin/forms.php');
+			require_once('admin/notifications.php');
 			require_once('admin/admin.php');
 		 }
 		 // Front-End Site

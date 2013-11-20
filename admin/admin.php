@@ -49,6 +49,11 @@ if (!class_exists('wp_pb_admin')) {
 		 // 5. Contextual help
 		 //
 		 add_filter('contextual_help', array(&$this, 'showhelp'));
+
+		 //
+		 // 6. Admin notifications
+		 //
+		 wp_admin_notifications::load();
 	  }
 
 	  /**
