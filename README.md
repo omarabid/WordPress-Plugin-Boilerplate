@@ -33,7 +33,9 @@ With the form generator, you can easily generate forms. Just register your setti
 $form = wp_admin_forms::generate_form('pb_settings', array('pb_general_section'), 'form_class', true);
 echo $form;
 ```
+#### Notifications API
 
+The notifications API allow you to manage and display admin notifications with ease. 
 ### Widget Class
 
 A simple and functional widget class is also available.
