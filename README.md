@@ -25,6 +25,15 @@ The boilerplate comes with many controls that you can integrate with the WordPre
 * checkbox
 * button
 
+#### Form Generator
+
+With the form generator, you can easily generate forms. Just register your settings with the WordPress API and use the following function to generate the form.
+
+```
+$form = wp_admin_forms::generate_form('pb_settings', array('pb_general_section'), 'form_class', true);
+echo $form;
+```
+
 ### Widget Class
 
 A simple and functional widget class is also available.
