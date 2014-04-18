@@ -29,8 +29,10 @@ if (!class_exists('wp_pb')) {
 	* plugin name. Try to avoid using popular and common words
 	* to avoid collusion with other plugins.
 	*/
-   class wp_pb
+   final class wp_pb
    {
+
+	  private static $instance;
 
 	  /**
 	   * The Plug-in version.
@@ -45,6 +47,14 @@ if (!class_exists('wp_pb')) {
 	   * @var string
 	   */
 	  public $wp_version = "3.5";
+
+	  public static function instance()
+	  {
+		 if ( ! isset( self::$instance ) && ! ( self::$instance instanceof wp_pb ) ) {
+			self::$instance = new wp_pb;
+		 }
+		 return self::$instance;
+	  }
 
 	  /**
 	   * Construct and start the other plug-in functionality
@@ -137,6 +147,7 @@ if (!class_exists('wp_pb')) {
 		 if (is_admin()) {
 			require_once('admin/forms.php');
 			require_once('admin/notifications.php');
+			require_once('admin/tables.php');
 			require_once('admin/admin.php');
 		 }
 		 // Front-End Site
@@ -204,5 +215,8 @@ if (!class_exists('wp_pb')) {
 /*
  * Creates a new instance of the BoilerPlate Class
  */
-global $wp_pb;
-$wp_pb = new wp_pb();
+function WPBP() {
+	return wp_pb::instance();
+}
+
+WPBP();
