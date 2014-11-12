@@ -149,7 +149,7 @@ if (!class_exists('wp_admin_forms')) {
 	  static function get_form_output($form_id, $sections = array())
 	  {
 		 ob_start();
-		 settings_fields('pb_settings');
+		 settings_fields( $form_id );
 		 foreach ($sections as $section) {
 			do_settings_sections($section);
 		 }		   
