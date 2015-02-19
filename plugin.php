@@ -130,6 +130,30 @@ if (!class_exists('BoilerPlate')) {
         }
 
         /**
+         * Throw error on object clone.
+         *
+         * Cloning instances of the class is forbidden.
+         *
+         * @since 1.0 
+         * @return void
+         */
+        public function __clone() { 
+            _doing_it_wrong( __FUNCTION__, __( 'Cloning instances of the class is forbidden.', 'wp-bp' ), '1.0' );
+        }
+
+        /**
+         * Disable unserializing of the class
+         *
+         * Unserializing instances of the class is forbidden.
+         *
+         * @since 1.0 
+         * @return void
+         */
+        public function __wakeup() { 
+            _doing_it_wrong( __FUNCTION__, __( 'Unserializing instances of the class is forbidden.', 'wp-bp' ), '1.0' );
+        }
+
+        /**
          * Checks that the WordPress setup meets the plugin requirements
          * @global string $wp_version
          * @return boolean
