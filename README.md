@@ -33,9 +33,16 @@ With the form generator, you can easily generate forms. Just register your setti
 $form = wp_admin_forms::generate_form('pb_settings', array('pb_general_section'), 'form_class', true);
 echo $form;
 ```
+
+#### Tables Generator
+
+The Table Generator page example uses the WordPress WP_List_Table class to create and display tables. There is no API or functions for this, but it's merely an example to showup how you can spin your own table using the WordPress generator.
+
 #### Notifications API
 
 The notifications API allow you to manage and display admin notifications with ease. 
+TODO: The notifications API is not implemented yet.
+
 ### Widget Class
 
 A simple and functional widget class is also available.
