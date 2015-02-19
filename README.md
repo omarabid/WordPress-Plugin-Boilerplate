@@ -2,7 +2,7 @@
 
 WordPress Plugin Boilerplate is a fully functioning WordPress plugin that offers you backbone structure and functionality to quickly start your WordPress development.
 
-The Plugin is object oriented, and decitate a simple and flexible files hierarchy.
+The Plugin is object oriented, and dictate a simple and flexible files hierarchy.
 
 ## The Plugin Base Class
 
