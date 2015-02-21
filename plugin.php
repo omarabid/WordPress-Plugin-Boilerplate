@@ -18,252 +18,242 @@
  */
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
-    exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-if (!class_exists('BoilerPlate')) {
-    /**
-     * The main class and initialization point of the plugin.
-     * Change the class name to XxxYxx where it relates to your
-     * plugin name. Try to avoid using popular and common words
-     * to avoid collusion with other plugins.
-     */
-    final class BoilerPlate
-    {
+if ( ! class_exists( 'BoilerPlate' ) ) {
+	/**
+	 * The main class and initialization point of the plugin.
+	 * Change the class name to XxxYxx where it relates to your
+	 * plugin name. Try to avoid using popular and common words
+	 * to avoid collusion with other plugins.
+	 */
+	final class BoilerPlate {
 
-        /**
-         * The only instance of the class
-         *
-         * @var BoilerPlate
-         * @since 1.0
-         */
-        private static $instance;
+		/**
+		 * The only instance of the class
+		 *
+		 * @var BoilerPlate
+		 * @since 1.0
+		 */
+		private static $instance;
 
-        /**
-         * The Plug-in version.
-         *
-         * @var string
-         * @since 1.0
-         */
-        public $version = "1.0";
+		/**
+		 * The Plug-in version.
+		 *
+		 * @var string
+		 * @since 1.0
+		 */
+		public $version = "1.0";
 
-        /**
-         * The minimal required version of WordPress for this plug-in to function correctly.
-         *
-         * @var string
-         * @since 1.0
-         */
-        public $wp_version = "4.0";
+		/**
+		 * The minimal required version of WordPress for this plug-in to function correctly.
+		 *
+		 * @var string
+		 * @since 1.0
+		 */
+		public $wp_version = "4.0";
 
-        /**
-         * Class name
-         *
-         * @var string
-         * @since 1.0
-         */
-        public $class_name;
+		/**
+		 * Class name
+		 *
+		 * @var string
+		 * @since 1.0
+		 */
+		public $class_name;
 
-        /**
-         * Create a new instance of the main class
-         *
-         * @since 1.0
-         * @static
-         * @return BoilerPlate
-         */
-        public static function instance()
-        { 
-            $class_name = get_class();
-            if ( ! isset( self::$instance ) && ! ( self::$instance instanceof $class_name ) ) {
-                self::$instance = new $class_name;
-            }
-            return self::$instance;
-        }
+		/**
+		 * Create a new instance of the main class
+		 *
+		 * @since 1.0
+		 * @static
+		 * @return BoilerPlate
+		 */
+		public static function instance() {
+			$class_name = get_class();
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof $class_name ) ) {
+				self::$instance = new $class_name;
+			}
 
-        /**
-         * Construct and start the other plug-in functionality
-         *
-         * @since 1.0
-         * @public
-         * @return null|void
-         */
-        public function __construct()
-        {
-            // Save the class name for later use
-            $this->class_name = get_class();
+			return self::$instance;
+		}
 
-            //
-            // 1. Plug-in requirements
-            //
-            if (!$this->check_requirements()) {
-                return;
-            }
+		/**
+		 * Construct and start the other plug-in functionality
+		 *
+		 * @since 1.0
+		 * @public
+		 * @return null|void
+		 */
+		public function __construct() {
+			// Save the class name for later use
+			$this->class_name = get_class();
 
-            //
-            // 2. Declare constants and load dependencies
-            //
-            $this->define_constants();
-            $this->load_dependencies();
+			//
+			// 1. Plug-in requirements
+			//
+			if ( ! $this->check_requirements() ) {
+				return;
+			}
 
-            //
-            // 3. Activation Hooks
-            //
-            register_activation_hook(__FILE__, array(&$this, 'activate'));
-            register_deactivation_hook(__FILE__, array(&$this, 'deactivate'));
-            // TODO: Fix this
-            register_uninstall_hook(__FILE__, 'wp_pb::uninstall');
+			//
+			// 2. Declare constants and load dependencies
+			//
+			$this->define_constants();
+			$this->load_dependencies();
 
-            //
-            // 4. Load Widget
-            //
-            add_action('widgets_init', array(&$this, 'register_widget'));
+			//
+			// 3. Activation Hooks
+			//
+			register_activation_hook( __FILE__, array( &$this, 'activate' ) );
+			register_deactivation_hook( __FILE__, array( &$this, 'deactivate' ) );
+			// TODO: Fix this
+			register_uninstall_hook( __FILE__, 'wp_pb::uninstall' );
 
-            //
-            // 5. i18n
-            //
-            add_action('init', array(&$this, 'i18n'));
+			//
+			// 4. Load Widget
+			//
+			add_action( 'widgets_init', array( &$this, 'register_widget' ) );
 
-            //
-            // 6. Actions
-            //
-            add_action('plugins_loaded', array(&$this, 'start'));
-        }
+			//
+			// 5. i18n
+			//
+			add_action( 'init', array( &$this, 'i18n' ) );
 
-        /**
-         * Throw error on object clone.
-         *
-         * Cloning instances of the class is forbidden.
-         *
-         * @since 1.0 
-         * @return void
-         */
-        public function __clone() { 
-            _doing_it_wrong( __FUNCTION__, __( 'Cloning instances of the class is forbidden.', 'wp-bp' ), '1.0' );
-        }
+			//
+			// 6. Actions
+			//
+			add_action( 'plugins_loaded', array( &$this, 'start' ) );
+		}
 
-        /**
-         * Disable unserializing of the class
-         *
-         * Unserializing instances of the class is forbidden.
-         *
-         * @since 1.0 
-         * @return void
-         */
-        public function __wakeup() { 
-            _doing_it_wrong( __FUNCTION__, __( 'Unserializing instances of the class is forbidden.', 'wp-bp' ), '1.0' );
-        }
+		/**
+		 * Throw error on object clone.
+		 *
+		 * Cloning instances of the class is forbidden.
+		 *
+		 * @since 1.0
+		 * @return void
+		 */
+		public function __clone() {
+			_doing_it_wrong( __FUNCTION__, __( 'Cloning instances of the class is forbidden.', 'wp-bp' ), '1.0' );
+		}
 
-        /**
-         * Checks that the WordPress setup meets the plugin requirements
-         * @global string $wp_version
-         * @return boolean
-         */
-        private function check_requirements()
-        {
-            global $wp_version;
-            if (!version_compare($wp_version, $this->wp_version, '>=')) {
-                add_action('admin_notices', array( &$this, 'display_req_notice' ));
-                return false;
-            }
-            return true;
-        }
+		/**
+		 * Disable unserializing of the class
+		 *
+		 * Unserializing instances of the class is forbidden.
+		 *
+		 * @since 1.0
+		 * @return void
+		 */
+		public function __wakeup() {
+			_doing_it_wrong( __FUNCTION__, __( 'Unserializing instances of the class is forbidden.', 'wp-bp' ), '1.0' );
+		}
 
-        /**
-         * Display the requirement notice
-         * @static
-         */
-        public function display_req_notice()
-        { 
-            echo '<div id="message" class="error"><p><strong>';
-            echo __('Sorry, PluginBoilerPlate requires WordPress ' . $this->wp_version . ' or higher.
-                Please upgrade your WordPress setup', 'wp-pb');
-            echo '</strong></p></div>';
-        }
+		/**
+		 * Checks that the WordPress setup meets the plugin requirements
+		 * @global string $wp_version
+		 * @return boolean
+		 */
+		private function check_requirements() {
+			global $wp_version;
+			if ( ! version_compare( $wp_version, $this->wp_version, '>=' ) ) {
+				add_action( 'admin_notices', array( &$this, 'display_req_notice' ) );
 
-        /**
-         * Define constants needed across the plug-in.
-         */
-        private function define_constants()
-        {
-            define('PB_BASENAME', plugin_basename(__FILE__));
-            define('PB_DIR', dirname(__FILE__));
-            define('PB_FOLDER', plugin_basename(dirname(__FILE__)));
-            define('PB_ABSPATH', trailingslashit(str_replace("\\", "/", WP_PLUGIN_DIR . '/' . plugin_basename(dirname(__FILE__)))));
-            define('PB_URLPATH', trailingslashit(WP_PLUGIN_URL . '/' . plugin_basename(dirname(__FILE__))));
-            define('PB_ADMINPATH', get_admin_url());
-        }
+				return false;
+			}
 
-        /**
-         * Loads PHP files that required by the plug-in
-         */
-        private function load_dependencies()
-        {
-            // Admin Panel
-            if (is_admin()) {
-                require_once('admin/forms.php');
-                require_once('admin/notifications.php');
-                require_once('admin/tables.php');
-                require_once('admin/admin.php');
-            }
-            // Front-End Site
-            if (!is_admin()) {
+			return true;
+		}
 
-            }
-            // Global
-            require_once('inc/widget.php');
-        }
+		/**
+		 * Display the requirement notice
+		 * @static
+		 */
+		public function display_req_notice() {
+			echo '<div id="message" class="error"><p><strong>';
+			echo __( 'Sorry, PluginBoilerPlate requires WordPress ' . $this->wp_version . ' or higher.
+                Please upgrade your WordPress setup', 'wp-pb' );
+			echo '</strong></p></div>';
+		}
 
-        /**
-         * Called every time the plug-in is activated.
-         */
-        public function activate()
-        {
+		/**
+		 * Define constants needed across the plug-in.
+		 */
+		private function define_constants() {
+			define( 'PB_BASENAME', plugin_basename( __FILE__ ) );
+			define( 'PB_DIR', dirname( __FILE__ ) );
+			define( 'PB_FOLDER', plugin_basename( dirname( __FILE__ ) ) );
+			define( 'PB_ABSPATH', trailingslashit( str_replace( "\\", "/", WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) ) ) );
+			define( 'PB_URLPATH', trailingslashit( WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) ) );
+			define( 'PB_ADMINPATH', get_admin_url() );
+		}
 
-        }
+		/**
+		 * Loads PHP files that required by the plug-in
+		 */
+		private function load_dependencies() {
+			// Admin Panel
+			if ( is_admin() ) {
+				require_once( 'admin/forms.php' );
+				require_once( 'admin/notifications.php' );
+				require_once( 'admin/tables.php' );
+				require_once( 'admin/admin.php' );
+			}
+			// Front-End Site
+			if ( ! is_admin() ) {
 
-        /**
-         * Called when the plug-in is deactivated.
-         */
-        public function deactivate()
-        {
+			}
+			// Global
+			require_once( 'inc/widget.php' );
+		}
 
-        }
+		/**
+		 * Called every time the plug-in is activated.
+		 */
+		public function activate() {
 
-        /**
-         * Called when the plug-in is uninstalled
-         */
-        static function uninstall()
-        {
+		}
 
-        }
+		/**
+		 * Called when the plug-in is deactivated.
+		 */
+		public function deactivate() {
 
-        /**
-         * Register the widgets
-         */
-        public function register_widget()
-        {
-            register_widget("wp_pb_widget");
-        }
+		}
+
+		/**
+		 * Called when the plug-in is uninstalled
+		 */
+		static function uninstall() {
+
+		}
+
+		/**
+		 * Register the widgets
+		 */
+		public function register_widget() {
+			register_widget( "wp_pb_widget" );
+		}
 
 
-        /**
-         * Internationalization
-         */
-        public function i18n()
-        {
-            load_plugin_textdomain('wp-pb', false, basename(dirname(__FILE__)) . '/lang/');
-        }
+		/**
+		 * Internationalization
+		 */
+		public function i18n() {
+			load_plugin_textdomain( 'wp-pb', false, basename( dirname( __FILE__ ) ) . '/lang/' );
+		}
 
-        /**
-         * Starts the plug-in main functionality
-         */
-        public function start()
-        {
+		/**
+		 * Starts the plug-in main functionality
+		 */
+		public function start() {
 
-        }
+		}
 
 
-    }
+	}
 
 }
 
@@ -271,7 +261,7 @@ if (!class_exists('BoilerPlate')) {
  * Creates a new instance of the BoilerPlate Class
  */
 function WPBP() {
-    return BoilerPlate::instance();
+	return BoilerPlate::instance();
 }
 
 WPBP();
