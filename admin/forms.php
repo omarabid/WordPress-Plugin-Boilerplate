@@ -126,11 +126,10 @@ if ( ! class_exists( 'wp_admin_forms' ) ) {
 			$html .= '</form>';
 
 			// Return or Print the form
-			if ( $return ) {
-				return $html;
-			} else {
+			if ( ! $return ) {
 				echo $html;
 			}
+			return $html;
 		}
 
 		/**
