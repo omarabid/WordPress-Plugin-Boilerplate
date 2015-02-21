@@ -5,7 +5,20 @@ WordPress Plugin Boilerplate is a fully functioning WordPress plugin that offers
 The Plugin is object oriented, and dictate a simple and flexible files hierarchy.
 
 ## Contents
-@@TOC@@
+- [WordPress Plugin Boilerplate](#wordpress-plugin-boilerplate)
+    - [Contents](#contents)
+- [The Plugin Base Class](#the-plugin-base-class)
+    - [Admin Panel](#admin-panel)
+        - [Available controls](#available-controls)
+        - [Form Generator](#form-generator)
+        - [Tables Generator](#tables-generator)
+        - [Notifications API](#notifications-api)
+    - [Widget Class](#widget-class)
+- [Unit Testing](#unit-testing)
+- [SASS and COFFEESCRIPT](#sass-and-coffeescript)
+        - [SASS](#sass)
+        - [CoffeeScript](#coffeescript)
+- [Other Goodies](#other-goodies)
 
 # The Plugin Base Class
 
