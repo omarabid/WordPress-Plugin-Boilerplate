@@ -103,10 +103,11 @@ if ( ! class_exists( 'wp_admin_forms' ) ) {
 		 * Generate a Form
 		 *
 		 * @param $form_id
-		 * @param $sections
-		 * @param $return
+		 * @param array $sections
+		 * @param string $form_class
+		 * @param bool $return
 		 *
-		 * @return $html
+		 * @return string $html
 		 */
 		static function generate_form( $form_id, $sections = array(), $form_class = '', $return = true ) {
 			// Determine the page Path
@@ -135,10 +136,10 @@ if ( ! class_exists( 'wp_admin_forms' ) ) {
 		/**
 		 * Get the output of the WordPress settings functions
 		 *
-		 * @param $form_id
-		 * @param $section
+		 * @param string $form_id
+		 * @param array $sections
 		 *
-		 * @return $output
+		 * @return string $output
 		 */
 		static function get_form_output( $form_id, $sections = array() ) {
 			ob_start();

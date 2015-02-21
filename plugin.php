@@ -84,7 +84,6 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 		 *
 		 * @since 1.0
 		 * @public
-		 * @return null|void
 		 */
 		public function __construct() {
 			// Save the class name for later use

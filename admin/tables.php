@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Load WP_List_Table if not loaded
 if ( ! class_exists( 'WP_List_Table' ) ) {
-	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
+	require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
 
 /**
@@ -135,8 +135,6 @@ if ( ! class_exists( 'wp_admin_table' ) ) {
 		 * Get things started
 		 *
 		 * @see WP_List_Table::__construct()
-		 *
-		 * @return void
 		 */
 		public function __construct() {
 			// Set parent defaults
