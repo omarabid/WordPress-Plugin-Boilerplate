@@ -98,7 +98,7 @@ if ( ! class_exists( 'wp_pb_admin' ) ) {
 			$screen = get_current_screen();
 			switch ( $screen->id ) {
 				case self::$pages['page-1']:
-					wp_enqueue_script( 'pb-script-1', PB_URLPATH . 'admin/files/js/script.js' );
+					wp_enqueue_script( 'bp-script-1', BP_URLPATH . 'admin/files/js/script.js' );
 					break;
 				case self::$pages['page-2']:
 					break;
@@ -112,7 +112,7 @@ if ( ! class_exists( 'wp_pb_admin' ) ) {
 			$screen = get_current_screen();
 			switch ( $screen->id ) {
 				case self::$pages['page-1']:
-					wp_enqueue_style( 'pb-script-1', PB_URLPATH . 'admin/files/css/style.css' );
+					wp_enqueue_style( 'bp-script-1', BP_URLPATH . 'admin/files/css/style.css' );
 					break;
 				case self::$pages['page-2']:
 					break;
