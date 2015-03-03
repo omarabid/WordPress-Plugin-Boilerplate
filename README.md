@@ -1,4 +1,4 @@
-# WordPress Plugin Boilerplate [![Build Status](https://travis-ci.org/omarabid/WordPress-Plugin-Boilerplate.svg)](https://travis-ci.org/omarabid/WordPress-Plugin-Boilerplate)
+# WordPress Plugin Boilerplate [![Build Status](https://travis-ci.org/omarabid/WordPress-Plugin-Boilerplate.svg)](https://travis-ci.org/omarabid/WordPress-Plugin-Boilerplate) [![Coverage Status](https://coveralls.io/repos/omarabid/WordPress-Plugin-Boilerplate/badge.svg)](https://coveralls.io/r/omarabid/WordPress-Plugin-Boilerplate)
 
 WordPress Plugin Boilerplate is a fully functioning WordPress plugin that offers you backbone structure and functionality to quickly start your WordPress development.
 
