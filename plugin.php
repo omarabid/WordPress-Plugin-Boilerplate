@@ -181,25 +181,25 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 		 * Define constants needed across the plug-in.
 		 */
 		private function define_constants() {
-            $this->define( 'BP_FILE', __FILE__ );
-            $this->define( 'BP_BASENAME', plugin_basename( __FILE__ ) );
-            $this->define( 'BP_DIR', dirname( __FILE__ ) );
-            $this->define( 'BP_FOLDER', plugin_basename( dirname( __FILE__ ) ) );
-            $this->define( 'BP_ABSPATH', trailingslashit( str_replace( "\\", "/", WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) ) ) );
-            $this->define( 'BP_URLPATH', trailingslashit( WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) ) );
-            $this->define( 'BP_ADMINPATH', get_admin_url() );	
+			$this->define( 'BP_FILE', __FILE__ );
+			$this->define( 'BP_BASENAME', plugin_basename( __FILE__ ) );
+			$this->define( 'BP_DIR', dirname( __FILE__ ) );
+			$this->define( 'BP_FOLDER', plugin_basename( dirname( __FILE__ ) ) );
+			$this->define( 'BP_ABSPATH', trailingslashit( str_replace( "\\", "/", WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) ) ) );
+			$this->define( 'BP_URLPATH', trailingslashit( WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) ) );
+			$this->define( 'BP_ADMINPATH', get_admin_url() );	
 		}
 
-        /**
-         * Define constant if not already set
-         * @param  string $name
-         * @param  string|bool $value
-         */
-        private function define( $name, $value ) {
-            if ( ! defined( $name ) ) {
-                define( $name, $value );
-            }
-        }
+		/**
+		 * Define constant if not already set
+		 * @param  string $name
+		 * @param  string|bool $value
+		 */
+		private function define( $name, $value ) {
+			if ( ! defined( $name ) ) {
+				define( $name, $value );
+			}
+		}
 
 		/**
 		 * Loads PHP files that required by the plug-in
