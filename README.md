@@ -110,3 +110,16 @@ coffee --output admin/files/js --watch --compile admin/files/js/cs
 * The License file
 * The Readme.txt file with formatting for WordPress.org
 * .gitignore
+* Travis CI integration
+* Scrutinizer integration
+
+# Credits
+
+BP uses code from the following projects and repositories
+- [WP-Logging]( https://pippinsplugins.com/wp-logging/ )
+
+BP is influenced by
+- [WooCommerce](https://github.com/woothemes/woocommerce)
+- [EasyDigitalDownloads](https://github.com/easydigitaldownloads/Easy-Digital-Downloads)
+- The Original [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate)
+
