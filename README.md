@@ -27,6 +27,21 @@ The plugin base class aim to abstract and encompass the basic functionality any 
 
 The idea is that you don't need to remember or have a check-list of best practices, the class already have them and you just add the implementation.
 
+## Class Autoloader
+
+The plugin comes with a simple class autoloader. It autoloads only classes in the "inc" folder. It can be, however, used in another include folder.
+
+To auto-load your classes, you'll have to name and organize them in a certain manner. Classes are prefixed with a prefix of your choice, and located in the root or sub-folders of the include path.
+
+For example, the following classes, will load the following files
+
+- BP_Logging
+=> inc/class-logging.php
+- BP_Utils_Logging
+=> inc/utils/class-logging.php
+- BP_Utils_Logging_Core
+=> inc/utils/logging/class-core.php
+
 ## Admin Panel
 
 The plugin has a simple Admin panel class. It has two admin pages, and add a submenu to the WordPress Admin bar.
