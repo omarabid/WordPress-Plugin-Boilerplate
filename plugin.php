@@ -217,6 +217,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 
 			}
 			// Global
+            require_once( 'inc/class-autoloader.php' );
 			require_once( 'inc/widget.php' );
 		}
 
