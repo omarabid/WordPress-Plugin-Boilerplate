@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'BP_Autoloader')) {
+if ( ! class_exists( 'BP_Autoloader') ) {
 	class BP_Autoloader {
 		/**
 		 * Path to the includes directory
@@ -25,8 +25,8 @@ if ( ! class_exists( 'BP_Autoloader')) {
 		 * The Constructor
 		 */
 		public function __construct() {
-			if ( function_exists( "__autoload" ) ) {
-				spl_autoload_register( "__autoload" );
+			if ( function_exists( '__autoload' ) ) {
+				spl_autoload_register( '__autoload' );
 			}
 
 			spl_autoload_register( array( $this, 'autoload' ) );
@@ -45,7 +45,7 @@ if ( ! class_exists( 'BP_Autoloader')) {
 
 			// if there is no prefix, return false
 			$prefix = strpos( $path, '_' );
-			if (  $prefix === false ) {
+			if (  false === $prefix ) {
 				return false;
 			}
 
@@ -54,7 +54,7 @@ if ( ! class_exists( 'BP_Autoloader')) {
 
 			// if there are no subs, return the class name
 			$class_pos = strrpos( $path, '_' );
-			if ( $class_pos === false ) {
+			if ( false === $class_pos ) {
 				return 'class-' . $path . '.php';
 			}	
 			$class_name = 'class-' . substr( $path, $class_pos + 1 ) . '.php';
@@ -62,7 +62,7 @@ if ( ! class_exists( 'BP_Autoloader')) {
 			$path = substr( $path, 0, $class_pos );
 
 			// if there is one sub-folder, return the class path
-			if ( strpos( $path, '_' ) === false ) {
+			if ( $false === strpos( $path, '_' ) ) {
 				return $path . '/' . $class_name;
 			}
 

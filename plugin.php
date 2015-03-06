@@ -45,7 +45,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 		 * @var string
 		 * @since 1.0
 		 */
-		public $version = "1.0";
+		public $version = '1.0';
 
 		/**
 		 * The minimal required version of WordPress for this plug-in to function correctly.
@@ -53,7 +53,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 		 * @var string
 		 * @since 1.0
 		 */
-		public $wp_version = "4.0";
+		public $wp_version = '4.0';
 
 		/**
 		 * Class name
@@ -185,7 +185,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 			$this->define( 'BP_BASENAME', plugin_basename( __FILE__ ) );
 			$this->define( 'BP_DIR', dirname( __FILE__ ) );
 			$this->define( 'BP_FOLDER', plugin_basename( dirname( __FILE__ ) ) );
-			$this->define( 'BP_ABSPATH', trailingslashit( str_replace( "\\", "/", WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) ) ) );
+			$this->define( 'BP_ABSPATH', trailingslashit( str_replace( '\\', '/', WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) ) ) );
 			$this->define( 'BP_URLPATH', trailingslashit( WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) ) );
 			$this->define( 'BP_ADMINPATH', get_admin_url() );	
 		}
@@ -246,7 +246,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 		 * Register the widgets
 		 */
 		public function register_widget() {
-			register_widget( "wp_pb_widget" );
+			register_widget( 'wp_pb_widget' );
 		}
 
 
