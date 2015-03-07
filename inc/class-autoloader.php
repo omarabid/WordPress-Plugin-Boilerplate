@@ -62,7 +62,7 @@ if ( ! class_exists( 'BP_Autoloader') ) {
 			$path = substr( $path, 0, $class_pos );
 
 			// if there is one sub-folder, return the class path
-			if ( $false === strpos( $path, '_' ) ) {
+			if ( false === strpos( $path, '_' ) ) {
 				return $path . '/' . $class_name;
 			}
 
