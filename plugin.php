@@ -212,13 +212,14 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 				require_once( 'admin/tables.php' );
 				require_once( 'admin/admin.php' );
 			}
+
 			// Front-End Site
 			if ( ! is_admin() ) {
 
 			}
+
 			// Global
-            require_once( 'inc/class-autoloader.php' );
-			require_once( 'inc/widget.php' );
+            require_once( 'inc/class-autoloader.php' );	
 		}
 
 		/**
@@ -246,7 +247,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 		 * Register the widgets
 		 */
 		public function register_widget() {
-			register_widget( 'wp_pb_widget' );
+			register_widget( 'BP_Widgets_Main' );
 		}
 
 

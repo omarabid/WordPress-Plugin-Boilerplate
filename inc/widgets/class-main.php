@@ -4,11 +4,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'wp_pb_widget' ) ) {
+if ( ! class_exists( 'BP_Widgets_Main' ) ) {
 	/**
 	 * Widget Boilerplate
 	 */
-	class wp_pb_widget extends WP_Widget {
+	class BP_Widgets_Main extends WP_Widget {
 
 		/**
 		 * Constructor
