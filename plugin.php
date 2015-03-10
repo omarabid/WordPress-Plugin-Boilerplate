@@ -106,9 +106,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 			// 3. Activation Hooks
 			//
 			register_activation_hook( __FILE__, array( &$this, 'activate' ) );
-			register_deactivation_hook( __FILE__, array( &$this, 'deactivate' ) );
-			// TODO: Fix this
-			register_uninstall_hook( __FILE__, 'wp_pb::uninstall' );
+			register_deactivation_hook( __FILE__, array( &$this, 'deactivate' ) );	
 
 			//
 			// 4. Load Widget
