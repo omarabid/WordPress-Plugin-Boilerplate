@@ -106,4 +106,3 @@ if ( ! class_exists( 'BP_Autoloader') ) {
 		}
 	}
 }
-new BP_Autoloader();

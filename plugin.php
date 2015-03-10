@@ -74,6 +74,9 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 			$class_name = get_class();
 			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof $class_name ) ) {
 				self::$instance = new $class_name;
+
+				self::$instance->autoloader = new BP_Autoloader();
+				self::$instance->logging = new BP_Utils_Logging();
 			}
 
 			return self::$instance;
@@ -109,7 +112,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 			register_deactivation_hook( __FILE__, array( &$this, 'deactivate' ) );	
 
 			//
-			// 4. Load Widget
+			// 4. Load Widgets
 			//
 			add_action( 'widgets_init', array( &$this, 'register_widget' ) );
 
@@ -171,7 +174,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 		public function display_req_notice() {
 			echo '<div id="message" class="error"><p><strong>';
 			echo __( 'Sorry, PluginBoilerPlate requires WordPress ' . $this->wp_version . ' or higher.
-                Please upgrade your WordPress setup', 'wp-pb' );
+				Please upgrade your WordPress setup', 'wp-pb' );
 			echo '</strong></p></div>';
 		}
 
@@ -217,7 +220,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 			}
 
 			// Global
-            require_once( 'inc/class-autoloader.php' );	
+			require_once( 'inc/class-autoloader.php' );	
 		}
 
 		/**
