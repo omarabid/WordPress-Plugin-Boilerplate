@@ -251,7 +251,6 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 			register_widget( 'BP_Widgets_Main' );
 		}
 
-
 		/**
 		 * Internationalization
 		 */
@@ -265,7 +264,6 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
 		public function start() {
 
 		}
-
 
 	}
 
