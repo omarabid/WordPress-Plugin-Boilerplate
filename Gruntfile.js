@@ -5,6 +5,7 @@ module.exports = function( grunt ) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
 		dirs: {
 			lang: 'i18n/languages',
 		},
@@ -68,10 +69,53 @@ module.exports = function( grunt ) {
 					type: 'wp-plugin',                // Type of project (wp-plugin or wp-theme).
 				}
 			}
+		},
+		// Clean up build directory
+		clean: {
+			main: ['build']
+		},
+		// Copy the plugin files into the build directory
+		copy: {
+			main: {
+				src:  [
+					'**',
+					'!node_modules/**',
+					'!bin/**',
+					'!build/**',
+					'!tests/**',
+					'!.git/**',
+					'!.idea/**',
+					'!Gruntfile.js',
+					'!package.json',
+					'!phpunit.xml',
+					'!.scrutinizer.yml',
+					'!.travis.yml',
+					'!.gitignore',
+					'!.gitmodules',
+					'!README.md',
+					'!README.txt',
+				],
+				dest: 'build/<%= pkg.name %>/'
+			}
+		},
+		//Compress build directory into <name>.zip 
+		compress: {
+			main: {
+				options: {
+					mode: 'zip',
+					archive: './build/<%= pkg.name %>.zip'
+				},
+				expand: true,
+				cwd: 'build/<%= pkg.name %>/',
+				src: ['**/*'],
+				dest: '<%= pkg.name %>/'
+			}
 		}
 	});	
 
 	// Register tasks
-	grunt.registerTask('default', ['makepot']);
+	grunt.registerTask( 'default', ['makepot', 'potomo', 'clean', 'copy', 'compress'] );
+
+	grunt.registerTask( 'report', ['checktextdomain'] );
 
 };

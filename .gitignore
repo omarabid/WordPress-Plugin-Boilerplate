@@ -2,3 +2,4 @@
 .sass-cache
 tests/wp-tests-config.php
 node_modules
+build
