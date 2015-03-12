@@ -13,7 +13,7 @@
   Author: Abid Omar
   Author URI: http://omarabid.com
   Version: 1.0.0
-  Text Domain: bp
+  Text Domain: wpbp
   License: GPLv3
  */
 
@@ -191,13 +191,13 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
          * Define constants needed across the plug-in.
          */
         private function define_constants() {
-            $this->define( 'BP_FILE', __FILE__ );
-            $this->define( 'BP_BASENAME', plugin_basename( __FILE__ ) );
-            $this->define( 'BP_DIR', dirname( __FILE__ ) );
-            $this->define( 'BP_FOLDER', plugin_basename( dirname( __FILE__ ) ) );
-            $this->define( 'BP_ABSPATH', trailingslashit( str_replace( '\\', '/', WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) ) ) );
-            $this->define( 'BP_URLPATH', trailingslashit( WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) ) );
-            $this->define( 'BP_ADMINPATH', get_admin_url() );	
+            $this->define( 'WPBP_FILE', __FILE__ );
+            $this->define( 'WPBP_BASENAME', plugin_basename( __FILE__ ) );
+            $this->define( 'WPBP_DIR', dirname( __FILE__ ) );
+            $this->define( 'WPBP_FOLDER', plugin_basename( dirname( __FILE__ ) ) );
+            $this->define( 'WPBP_ABSPATH', trailingslashit( str_replace( '\\', '/', WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) ) ) );
+            $this->define( 'WPBP_URLPATH', trailingslashit( WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) ) );
+            $this->define( 'WPBP_ADMINPATH', get_admin_url() );	
         }
 
         /**
@@ -270,26 +270,26 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
          */
         public function i18n() {
             // Set filter for plugin's languages directory
-            $lang_dir = BP_FOLDER . '/lang/';
+            $lang_dir = WPBP_FOLDER . '/i18n/languages/';
             $lang_dir = apply_filters( 'bp_languages_directory', $lang_dir );
 
             // Traditional WordPress plugin locale filter
-            $locale = apply_filters( 'plugin_locale', get_locale(), 'bp' );
-            $mofile        = sprintf( '%1$s-%2$s.mo', 'bp', $locale );
+            $locale = apply_filters( 'plugin_locale', get_locale(), 'wpbp' );
+            $mofile        = sprintf( '%1$s-%2$s.mo', 'wpbp', $locale );
 
             // Setup paths to current locale file
             $mofile_local  = $lang_dir . $mofile;
-            $mofile_global = WP_LANG_DIR . '/bp/' . $mofile;
+            $mofile_global = WP_LANG_DIR . '/wpbp/' . $mofile;
 
             if ( file_exists( $mofile_global ) ) {
-                // Look in global /wp-content/languages/bp folder
-                load_textdomain( 'bp', $mofile_global );
+                // Look in global /wp-content/languages/wpbp folder
+                load_textdomain( 'wpbp', $mofile_global );
             } elseif ( file_exists( $mofile_local ) ) {
-                // Look in local /wp-content/plugins/WordPress-Plugin-Boilerplate/languages/ folder
-                load_textdomain( 'bp', $mofile_local );
+                // Look in local /wp-content/plugins/wpbp/languages/ folder
+                load_textdomain( 'wpbp', $mofile_local );
             } else {
                 // Load the default language files
-                load_plugin_textdomain( 'bp', false, $lang_dir );
+                load_plugin_textdomain( 'wpbp', false, $lang_dir );
             }
         }
 

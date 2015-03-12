@@ -31,7 +31,7 @@ if ( ! class_exists( 'BP_Autoloader') ) {
 
 			spl_autoload_register( array( $this, 'autoload' ) );
 
-			$this->include_path = BP_DIR . '/inc/';	
+			$this->include_path = WPBP_DIR . '/inc/';	
 		}
 
 		/**
