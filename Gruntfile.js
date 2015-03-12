@@ -1,6 +1,9 @@
 module.exports = function( grunt ) {
 	'use strict';
 
+	// Load multiple grunt tasks using globbing patterns
+	require('load-grunt-tasks')(grunt);
+
 	grunt.initConfig({
 		makepot: {
 			target: {
@@ -11,10 +14,7 @@ module.exports = function( grunt ) {
 				}
 			}
 		}
-	});	
-
-	// Load NPM tasks to be used here	
-	grunt.loadNpmTasks( 'grunt-wp-i18n' );
+	});		
 
 	// Register tasks
 	grunt.registerTask('default', ['makepot']);
