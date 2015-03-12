@@ -5,6 +5,9 @@ module.exports = function( grunt ) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
+		dirs: {
+			lang: 'i18n/languages',
+		},
 		checktextdomain: {
 			options:{
 				text_domain: 'wpbp',
@@ -40,6 +43,21 @@ module.exports = function( grunt ) {
 					'!build/.*'// Exclude build/
 				],
 				expand: true
+			}
+		},
+		potomo: {
+			dist: {
+				options: {
+					poDel: false 
+				},
+				files: [{
+					expand: true,
+					cwd: '<%= dirs.lang %>',
+					src: ['*.po'],
+					dest: '<%= dirs.lang %>',
+					ext: '.mo',
+					nonull: true
+				}]
 			}
 		},
 		makepot: {
