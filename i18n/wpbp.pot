@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PluginBoilerplate 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/plugin\n"
-"POT-Creation-Date: 2015-03-11 17:52:34+00:00\n"
+"POT-Creation-Date: 2015-03-12 00:51:38+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,6 +45,10 @@ msgstr ""
 msgid "Logs"
 msgstr ""
 
+#: inc/utils/debugbar/views/view-main.php:1
+msgid "Registered Constants"
+msgstr ""
+
 #: inc/widgets/class-main.php:20
 msgid "A boilerplate widget"
 msgstr ""
@@ -53,11 +57,11 @@ msgstr ""
 msgid "Field"
 msgstr ""
 
-#: plugin.php:139
+#: plugin.php:148
 msgid "Cloning instances of the class is forbidden."
 msgstr ""
 
-#: plugin.php:151
+#: plugin.php:160
 msgid "Unserializing instances of the class is forbidden."
 msgstr ""
 
