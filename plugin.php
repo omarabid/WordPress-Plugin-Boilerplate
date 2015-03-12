@@ -64,6 +64,14 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
         public $class_name;
 
         /**
+         * An array of defined constants names
+         *
+         * @var array
+         * @since 1.0
+         */
+        public $defined_constants;
+
+        /**
          * Create a new instance of the main class
          *
          * @since 1.0
@@ -200,6 +208,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
         private function define( $name, $value ) {
             if ( ! defined( $name ) ) {
                 define( $name, $value );
+                $this->defined_constants[] = $name;
             }
         }
 
