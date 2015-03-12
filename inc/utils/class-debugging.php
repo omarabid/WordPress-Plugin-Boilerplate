@@ -12,11 +12,11 @@ class BP_Utils_Debugging {
 	}
 
 	public function debug_bar_info_panel( $panels ) {
-		if ( ! class_exists( 'BP_Utils_InfoPanel' ) ) {
+		if ( ! class_exists( 'BP_Utils_Debugbar_Info' ) ) {
 			return;
 		}
 
-		$panel = new BP_Utils_InfoPanel();	
+		$panel = new BP_Utils_Debugbar_Info();		
 		$panels[] = $panel;
 
 		return $panels;
