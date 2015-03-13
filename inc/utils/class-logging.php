@@ -17,7 +17,6 @@ if ( class_exists( 'BP_Utils_Logging' ) ) {
 */
 
 class BP_Utils_Logging {
-
 	/**
 	 * Class constructor.
 	 *
@@ -139,7 +138,6 @@ class BP_Utils_Logging {
 		return apply_filters( 'wp_log_types', $terms );
 	}
 
-
 	/**
 	 * Registers the wp_log Post Type
 	 *
@@ -167,7 +165,6 @@ class BP_Utils_Logging {
 		register_post_type( 'wp_log', apply_filters( 'wp_logging_post_type_args', $log_args ) );
 
 	}
-
 
 	/**
 	 * Registers the Type Taxonomy
@@ -197,7 +194,6 @@ class BP_Utils_Logging {
 		}
 	}
 
-
 	/**
 	 * Check if a log type is valid
 	 *
@@ -213,7 +209,6 @@ class BP_Utils_Logging {
 	private static function valid_type( $type ) {
 		return in_array( $type, self::log_types() );
 	}
-
 
 	/**
 	 * Create new log entry
@@ -241,7 +236,6 @@ class BP_Utils_Logging {
 		return self::insert_log( $log_data );
 
 	}
-
 
 	/**
 	 * Stores a log entry
@@ -294,7 +288,6 @@ class BP_Utils_Logging {
 
 	}
 
-
 	/**
 	 * Update and existing log item
 	 *
@@ -333,7 +326,6 @@ class BP_Utils_Logging {
 
 	}
 
-
 	/**
 	 * Easily retrieves log items for a particular object ID
 	 *
@@ -349,7 +341,6 @@ class BP_Utils_Logging {
 		return self::get_connected_logs( array( 'post_parent' => $object_id, 'paged' => $paged, 'log_type' => $type ) );
 
 	}
-
 
 	/**
 	 * Retrieve all connected logs
@@ -402,7 +393,6 @@ class BP_Utils_Logging {
 
 	}
 
-
 	/**
 	 * Retrieves number of log entries connected to particular object ID
 	 *
@@ -447,4 +437,3 @@ class BP_Utils_Logging {
 	}
 
 }
-
