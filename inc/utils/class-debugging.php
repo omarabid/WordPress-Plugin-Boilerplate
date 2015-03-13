@@ -1,4 +1,13 @@
 <?php
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+// Exit if class is already defined
+if ( class_exists( 'BP_Utils_Debugging' ) ) {
+	exit;
+}
+
 /**
  * Class for Debugging and Displaying various 
  * information about the plugin. 
