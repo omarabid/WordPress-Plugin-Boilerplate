@@ -5,11 +5,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 // Exit if class is already defined
 if ( class_exists( 'BP_Utils_Debugbar_Info' ) ) {
-	exit;
+	return;
 }
 // Exit if the Parent Class is not defined
 if ( ! class_exists( 'Debug_Bar_Panel' ) ) {
-	exit;
+	return;
 }
 
 /**

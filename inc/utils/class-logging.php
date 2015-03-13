@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 // Exit if class is already defined
 if ( class_exists( 'BP_Utils_Logging' ) ) {
-	exit;
+	return;
 }
 
 /**
