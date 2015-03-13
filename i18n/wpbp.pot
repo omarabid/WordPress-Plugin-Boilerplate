@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PluginBoilerplate 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/plugin\n"
-"POT-Creation-Date: 2015-03-12 00:51:38+00:00\n"
+"POT-Creation-Date: 2015-03-12 01:47:22+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,55 +13,58 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
 
-#: admin/pages/page2.php:6
+#: admin/pages/page2.php:6 build/wpbp/admin/pages/page2.php:6
 msgid "WP Admin Table"
 msgstr ""
 
-#: admin/tables.php:142
+#: admin/tables.php:142 build/wpbp/admin/tables.php:142
 msgid "Items"
 msgstr ""
 
-#: admin/tables.php:143
+#: admin/tables.php:143 build/wpbp/admin/tables.php:143
 msgid "Item"
 msgstr ""
 
-#: admin/tables.php:162
+#: admin/tables.php:162 build/wpbp/admin/tables.php:162
 msgid "Search"
 msgstr ""
 
-#: admin/tables.php:218
+#: admin/tables.php:218 build/wpbp/admin/tables.php:218
 msgid "All"
 msgstr ""
 
-#: admin/tables.php:222
+#: admin/tables.php:222 build/wpbp/admin/tables.php:222
 msgid "Filter 1"
 msgstr ""
 
-#: admin/tables.php:226
+#: admin/tables.php:226 build/wpbp/admin/tables.php:226
 msgid "Filter 2"
 msgstr ""
 
-#: inc/utils/class-logging.php:150
+#: build/wpbp/inc/utils/class-logging.php:150 inc/utils/class-logging.php:150
 msgid "Logs"
 msgstr ""
 
+#: build/wpbp/inc/utils/debugbar/views/view-main.php:1
 #: inc/utils/debugbar/views/view-main.php:1
 msgid "Registered Constants"
 msgstr ""
 
-#: inc/widgets/class-main.php:20
+#: build/wpbp/inc/widgets/class-main.php:20 inc/widgets/class-main.php:20
 msgid "A boilerplate widget"
 msgstr ""
 
-#: inc/widgets/class-main.php:33 inc/widgets/class-main.php:37
+#: build/wpbp/inc/widgets/class-main.php:33
+#: build/wpbp/inc/widgets/class-main.php:37 inc/widgets/class-main.php:33
+#: inc/widgets/class-main.php:37
 msgid "Field"
 msgstr ""
 
-#: plugin.php:148
+#: build/wpbp/plugin.php:148 plugin.php:148
 msgid "Cloning instances of the class is forbidden."
 msgstr ""
 
-#: plugin.php:160
+#: build/wpbp/plugin.php:160 plugin.php:160
 msgid "Unserializing instances of the class is forbidden."
 msgstr ""
 
