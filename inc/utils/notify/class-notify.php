@@ -56,7 +56,7 @@ class BP_Utils_Notify {
 	}
 
 	private function display_notice( $notice ) {
-		echo '<div class="'.$notice['type'].'">
+		echo '<div class="updated '.$notice['type'].'">
       		'.$notice['content'].' 
     </div>';
 	}
