@@ -57,15 +57,16 @@ class BP_Autoloader {
 		// if there are no subs, return the class name
 		$class_pos = strrpos( $path, '_' );
 		if ( false === $class_pos ) {
-			return 'class-' . $path . '.php';
-		}	
-		$class_name = 'class-' . substr( $path, $class_pos + 1 ) . '.php';
+			return array( 'class-' . $path . '.php', $path . '/' . 'class-' . $path . '.php' );
+		}
+		$class_tag = substr( $path, $class_pos + 1 );
+		$class_name = 'class-' . $class_tag . '.php';
 		// remove the class name
 		$path = substr( $path, 0, $class_pos );
 
 		// if there is one sub-folder, return the class path
 		if ( false === strpos( $path, '_' ) ) {
-			return $path . '/' . $class_name;
+			return array( $path . '/' . $class_name, $path . '/' . $class_tag . '/' . $class_name);
 		}
 
 		// if there are many sub-folders, find them all
@@ -78,7 +79,9 @@ class BP_Autoloader {
 		$subs = $subs . $path . '/';
 
 		// the full path!
-		$full_path = $subs . $class_name;
+		$path1 = $subs . $class_name;
+		$path2 = $subs . $class_tag . '/' . $class_name;
+		$full_path = array( $path1, $path2 );
 
 		return $full_path;
 	}
@@ -102,8 +105,13 @@ class BP_Autoloader {
 	 * @param string $class
 	 */
 	public function autoload( $class ) {	
-		$file_path = $this->get_file_path_from_class( $class );
-		$path = $this->include_path . $file_path;	
-		$this->load_file( $path );
+		$file_paths = $this->get_file_path_from_class( $class );	
+		if ( !is_array( $file_paths ) ) {
+			return;
+		}
+		foreach( $file_paths as $file_path ) {
+			$path = $this->include_path . $file_path;		
+			$this->load_file( $path );
+		}
 	}
 }
