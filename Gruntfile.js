@@ -6,9 +6,13 @@ module.exports = function( grunt ) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+
+		// project directories
 		dirs: {
 			lang: 'i18n/languages',
 		},
+
+		// Check that textdomain is set
 		checktextdomain: {
 			options:{
 				text_domain: 'wpbp',
@@ -46,6 +50,8 @@ module.exports = function( grunt ) {
 				expand: true
 			}
 		},
+
+		// Generate the mo files
 		potomo: {
 			dist: {
 				options: {
@@ -61,6 +67,8 @@ module.exports = function( grunt ) {
 				}]
 			}
 		},
+
+		// Make the l10n file
 		makepot: {
 			target: {
 				options: {
@@ -70,10 +78,12 @@ module.exports = function( grunt ) {
 				}
 			}
 		},
+
 		// Clean up build directory
 		clean: {
 			main: ['build']
 		},
+
 		// Copy the plugin files into the build directory
 		copy: {
 			main: {
@@ -98,6 +108,7 @@ module.exports = function( grunt ) {
 				dest: 'build/<%= pkg.name %>/'
 			}
 		},
+
 		//Compress build directory into <name>.zip 
 		compress: {
 			main: {
@@ -110,12 +121,33 @@ module.exports = function( grunt ) {
 				src: ['**/*'],
 				dest: '<%= pkg.name %>/'
 			}
-		}
+		},
+
+		// Compile all .scss files in the includes directory
+		sass: {
+			compile: {
+				options: {
+				},
+				files: [{
+					expand: true,
+					cwd: 'inc/',
+					src: ['**/scss/*.scss'],
+					dest: '..',
+					ext: '.css'
+				}]
+			}
+		},
+changelog: {
+    options: {
+      // Task-specific options go here.
+    }
+  }
 	});	
 
 	// Register tasks
 	grunt.registerTask( 'default', ['makepot', 'potomo', 'clean', 'copy', 'compress'] );
 
+	// Report Broken Textdomain
 	grunt.registerTask( 'report', ['checktextdomain'] );
 
 };
