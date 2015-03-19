@@ -109,6 +109,18 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		// Update the Plugin Version
+		replace: {
+			version: {
+				src: ['plugin.php', 'README.txt'],             // source files array (supports minimatch)
+				dest: 'build/<%= pkg.name %>/',             // destination directory or file
+				replacements: [{
+					from: '{{@version}}',                   // string replacement
+					to: '<%= pkg.version %>'
+				}]
+			}
+		},
+
 		//Compress build directory into <name>.zip 
 		compress: {
 			main: {
@@ -137,15 +149,17 @@ module.exports = function( grunt ) {
 				}]
 			}
 		},
-changelog: {
-    options: {
-      // Task-specific options go here.
-    }
-  }
+
+		// Generates a ChangeLog file from Git commits
+		changelog: {
+			options: {
+				// Task-specific options go here.
+			}
+		}
 	});	
 
 	// Register tasks
-	grunt.registerTask( 'default', ['makepot', 'potomo', 'clean', 'copy', 'compress'] );
+	grunt.registerTask( 'default', ['makepot', 'potomo', 'clean', 'copy', 'replace', 'compress'] );
 
 	// Report Broken Textdomain
 	grunt.registerTask( 'report', ['checktextdomain'] );

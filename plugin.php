@@ -2,7 +2,7 @@
 /**
  * WordPress Plugin BoilerPlate
  *
- * @version 1.0.0
+ * @version {{@version}}
  * @package Main
  * @author Abid Omar
  */
@@ -12,7 +12,7 @@
   Description: Plugin Description.
   Author: Abid Omar
   Author URI: http://omarabid.com
-  Version: 1.0.0
+  Version: {{@version}}
   Text Domain: wpbp
   License: GPLv3
  */
@@ -45,7 +45,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
          * @var string
          * @since 1.0
          */
-        public $version = '1.0';
+        public $version = '{{@version}}';
 
         /**
          * The minimal required version of WordPress for this plug-in to function correctly.
@@ -297,6 +297,10 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
          * Starts the plug-in main functionality
          */
         public function start() {
+			$notice = new BP_Utils_Notify( 'sss' );
+			$notice->update_notification( 'll', '<p>my second line</p><a href="#">Hide this notification</a>', 'error' );
+			//$notice->display_notification( 'll', 0 );
+
         }
 
     }
