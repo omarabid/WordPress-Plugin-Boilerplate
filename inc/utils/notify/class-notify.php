@@ -128,7 +128,9 @@ class BP_Utils_Notify {
 	}
 
 	public function hide_all_notifications() {
+		$this->active = array();
 
+		$this->save();
 	}
 
 	public function delete_all_notifications() {
