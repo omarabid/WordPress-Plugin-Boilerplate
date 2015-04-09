@@ -68,6 +68,22 @@ class BP_Utils_Notify {
     }
 
     /**
+     * Callback to handle dismiss button AJAX request
+     *
+     * @return void
+     */
+    public function callback_dismiss_notification() {
+        if ( isset( $_POST['namespace'] ) || isset( $_POST['id'] ) ) {
+            $namespace = $_POST['namespace'];
+            $id = $_POST['id'];
+
+            $notify = new BP_Utils_Notify( $namespace );
+            $notify->hide_notification( $id );
+        }
+        exit;
+    }
+
+    /**
      * Load all notices into the class.
      *
      * @return void
