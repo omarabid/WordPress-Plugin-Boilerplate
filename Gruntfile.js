@@ -142,7 +142,7 @@ module.exports = function( grunt ) {
 				},
 				files: [{
 					expand: true,
-					cwd: 'inc/',
+					cwd: '',
 					src: ['**/*.scss'],
 					dest: '',
 					ext: '.css'
