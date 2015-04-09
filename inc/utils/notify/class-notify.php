@@ -60,11 +60,19 @@ class BP_Utils_Notify {
 
         // Load Notifications Resources
         add_action( 'admin_enqueue_scripts', array( &$this, 'notices_resources' ) );
+
+        // AJAX Handler for dismissing notifications
+        add_action( 'wp_ajax_dismiss_notification', array( &$this, 'callback_dismiss_notification' ) );
     }
 
+    /**
+     * Load Notifications CSS and JS files
+     *
+     * @return void
+     */
     public function notices_resources() {
         wp_enqueue_script( 'notify-script', plugin_dir_url( __FILE__ ) . 'assets/js/notify.js' );
-        wp_register_style( 'notify-style', plugin_dir_url( __FILE__ ) . 'assets/css/notify.css' );        
+        wp_enqueue_style( 'notify-style', plugin_dir_url( __FILE__ ) . 'assets/css/notify.css' );        
     }
 
     /**
@@ -138,11 +146,15 @@ class BP_Utils_Notify {
      * @return void
      */
     private function print_notification( $notice ) {
-        add_action( 'admin_enqueue_scripts', array( &$this, 'aa' ) );
         do_action( 'easy_notifications_before_notice', $notice ); 
 
         echo '<div class="updated '.$notice['type'].'">
             ' . $notice['content'] . ' 
+
+            <a href="#" class="dismiss-notice" 
+            data-namespace="' . $this->prefix . '" 
+            data-noticeid="' . $notice['id'] . '"
+            >Dismiss Notification</a>
             </div>';
 
         do_action( 'easy_notifications_after_notice', $notice );
