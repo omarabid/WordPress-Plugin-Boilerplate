@@ -1,5 +1,6 @@
 .idea/
 .sass-cache
+*.map
 tests/wp-tests-config.php
 node_modules
 build
