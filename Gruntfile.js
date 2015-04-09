@@ -143,10 +143,17 @@ module.exports = function( grunt ) {
 				files: [{
 					expand: true,
 					cwd: 'inc/',
-					src: ['**/scss/*.scss'],
-					dest: '..',
+					src: ['**/*.scss'],
+					dest: '',
 					ext: '.css'
 				}]
+			}
+		},
+
+		watch: {
+			css: {
+				files: ['**/*.scss'],
+				tasks: [ 'sass' ]
 			}
 		},
 
@@ -156,6 +163,7 @@ module.exports = function( grunt ) {
 				// Task-specific options go here.
 			}
 		},
+
 		bump: {
 			options: {
 				files: ['package.json'],
