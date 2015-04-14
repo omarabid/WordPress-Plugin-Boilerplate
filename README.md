@@ -118,6 +118,7 @@ coffee --output admin/files/js --watch --compile admin/files/js/cs
 BP uses code from the following projects and repositories
 - [WP-Logging]( https://pippinsplugins.com/wp-logging/ )
 - [Self-Hosted-WordPress-Plugin-repository](https://github.com/omarabid/Self-Hosted-WordPress-Plugin-repository)
+- [Options Framework](https://github.com/devinsays/options-framework-plugin)
 
 BP is influenced by
 - [WooCommerce](https://github.com/woothemes/woocommerce)
