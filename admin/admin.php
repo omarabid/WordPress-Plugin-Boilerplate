@@ -65,14 +65,16 @@ if ( ! class_exists( 'wp_pb_admin' ) ) {
 			) );
 
 			// Create Submenus
-			self::$pages['page-1'] = add_submenu_page( 'page-id-1', 'WordPress Plugin BoilerPlate', 'Page 1', 'manage_options', 'page-id-1', array(
+			self::$pages['page-1'] = add_submenu_page( 'page-id-1', 'WordPress Plugin BoilerPlate - Main', 'Page 1', 'manage_options', 'page-id-1', array(
 				&$this,
 				'menu_hook'
 			) );
-			self::$pages['page-2'] = add_submenu_page( 'page-id-1', 'WordPress Plugin BoilerPlate', 'Page 2', 'manage_options', 'page-id-2', array(
+			self::$pages['page-2'] = add_submenu_page( 'page-id-1', 'WordPress Plugin BoilerPlate - Tables', 'Page 2', 'manage_options', 'page-id-2', array(
 				&$this,
 				'menu_hook'
 			) );
+
+			self::$pages['page-3'] = add_submenu_page( 'page-id-1', 'WordPress Plugin BoilerPlate - Options', 'Page 3', 'manage_options', 'page-id-3', array( &$this, 'menu_hook' ) );
 		}
 
 		/**
@@ -87,6 +89,9 @@ if ( ! class_exists( 'wp_pb_admin' ) ) {
 					break;
 				case self::$pages['page-2']:
 					require_once( 'pages/page2.php' );
+					break;
+				case self::$pages['page-3']:
+					require_once( 'pages/page3.php' );
 					break;
 			}
 		}
