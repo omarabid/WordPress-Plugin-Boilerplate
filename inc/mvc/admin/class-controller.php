@@ -19,8 +19,11 @@ abstract class BP_MVC_Admin_Controller {
 
 	public $view;
 	protected $page_id;
-	protected $child;
+	protected $title;
+	protected $name;
+	protected $parent;
 	protected $cap;
+	protected $show = false;
 
 	/**
 	 *
@@ -31,6 +34,23 @@ abstract class BP_MVC_Admin_Controller {
 	 * @return void
 	 */
 	public function __construct() {	
+		add_action( 'admin_menu', array( &$this, 'add_menu' ) );
+	}
+
+	public function add_menu() {
+		if ( !isset( $this->page_id ) && !isset( $this->title ) && !isset( $this->name ) && !isset( $this->parent ) && !isset( $this->cap ) ) {
+			return;
+		}
+
+		if ( $this->parent ) {	
+			add_submenu_page( $this->parent, $this->title, $this->name, $this->cap, $this->page_id, array( &$this, 'render_page' ) );
+		} else {
+			add_menu_page( $this->title, $this->name, $this->cap, $this->page_id, array( &$this, 'render_page' ) );	
+		}
+	}
+
+	public function render_page() {
+
 	}
 
 	public function process_get() {
