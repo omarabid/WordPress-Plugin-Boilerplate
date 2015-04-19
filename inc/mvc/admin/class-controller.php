@@ -4,18 +4,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 // Exit if class is already defined
-if ( class_exists( 'BP_Admin_Controller' ) ) {
+if ( class_exists( 'BP_MVC_Admin_Controller' ) ) {
 	return;
 }
 
 /**
  * Admin Controller 
  *
- * @class BP_Admin_Controller 
+ * @class BP_MVC_Admin_Controller 
  * @package app/core
  * @author Abid Omar
  */
-abstract class BP_Admin_Controller {
+abstract class BP_MVC_Admin_Controller {
 
 	public $view;
 	private $page_id;

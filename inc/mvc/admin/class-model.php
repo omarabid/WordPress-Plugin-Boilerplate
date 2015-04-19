@@ -4,19 +4,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 // Exit if class is already defined
-if ( class_exists( 'BP_Admin_Model' ) ) {
+if ( class_exists( 'BP_MVC_Admin_Model' ) ) {
 	return;
 }
 
 /**
  * Admin Model 
  *
- * @class BP_Admin_Model 
+ * @class BP_MVC_Admin_Model 
  * @package app/core
  * @author Abid Omar
  */
-abstract class BP_Admin_Model {
-
+abstract class BP_MVC_Admin_Model {
 	public $title;
 	public $name;
 
