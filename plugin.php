@@ -85,7 +85,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
                 self::$instance->autoloader = new BP_Autoloader();
                 self::$instance->debugging = new BP_Utils_Debugging();
                 self::$instance->logging = new BP_Utils_Logging();	
-				self::$instance->options = new BP_Options( 'myoptions', $options );
+				self::$instance->app = new BP_MVC( WPBP_DIR . '/app' );
             }
 
             return self::$instance;
