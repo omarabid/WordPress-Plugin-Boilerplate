@@ -1,7 +1,6 @@
 <?php
 
 class Tests_Autoloader extends WP_UnitTestCase {
-
 	public function test_get_file_path_from_class() {
 		$autoloader = new BP_Autoloader();
 

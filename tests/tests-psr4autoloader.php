@@ -1,6 +1,5 @@
 <?php
-
-class MockPsr4Autoloader extends Psr4AutoLoader
+class MockPsr4Autoloader extends BP_Psr4Autoloader
 {
     protected $files = array();
 
@@ -19,7 +18,7 @@ class Psr4AutoloaderTest extends WP_UnitTestCase
 {
     protected $loader;
 
-    protected function setUp()
+    public function setUp()
     {
         $this->loader = new MockPsr4Autoloader;
 

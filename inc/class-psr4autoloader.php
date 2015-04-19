@@ -52,7 +52,7 @@ if ( class_exists( 'BP_Psr4AutoLoader' ) ) {
  *      <?php
  *      new \Foo\Bar\Qux\QuuxTest;
  */
-class Psr4Autoloader
+class BP_Psr4Autoloader
 {
 	/**
 	 * An associative array where the key is a namespace prefix and the value
