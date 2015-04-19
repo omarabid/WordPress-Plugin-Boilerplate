@@ -18,9 +18,9 @@ if ( class_exists( 'BP_MVC_Admin_Controller' ) ) {
 abstract class BP_MVC_Admin_Controller {
 
 	public $view;
-	private $page_id;
-	private $child;
-	private $cap;
+	protected $page_id;
+	protected $child;
+	protected $cap;
 
 	/**
 	 *
@@ -30,11 +30,7 @@ abstract class BP_MVC_Admin_Controller {
 	 *
 	 * @return void
 	 */
-	public function __construct( $page_id, $child = false, $cap = 'manage_options' ) {
-		$this->page_id = $page_id;
-		$this->child = $child;
-		$this->cap = $cap;
-		$this->view = new BP_Admin_View();
+	public function __construct() {	
 	}
 
 	public function process_get() {
@@ -45,11 +41,11 @@ abstract class BP_MVC_Admin_Controller {
 
 	}
 
-	abstract public function load_scripts() {
+	public function load_scripts() {
 
 	}
 
-	abstract public function load_styles() {
+	public function load_styles() {
 
 	}
 }
