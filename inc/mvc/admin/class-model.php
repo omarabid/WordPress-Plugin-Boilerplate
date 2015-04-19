@@ -17,4 +17,10 @@ if ( class_exists( 'BP_Admin_Model' ) ) {
  */
 abstract class BP_Admin_Model {
 
+	public $title;
+	public $name;
+
+	public function __construct() {
+
+	}
 }
