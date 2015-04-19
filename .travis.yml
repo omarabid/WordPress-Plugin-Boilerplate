@@ -11,7 +11,15 @@ env:
     - WP_VERSION=latest WP_MULTISITE=0
     - WP_VERSION=4.1 WP_MULTISITE=0
     - WP_VERSION=4.0 WP_MULTISITE=0
-
+# disable the default submodule logic
+git:
+  submodules: false
+ 
+# use sed to replace the SSH URL with the public URL, then init and update submodules
+before_install:
+ - sed -i 's/git@github.com:/git:\/\/github.com\//' .gitmodules
+ - git submodule update --init --recursive
+ 
 before_script:
     - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION 
 
