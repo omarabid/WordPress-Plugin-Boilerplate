@@ -339,6 +339,12 @@ $options = array();
                 self::$instance = new $class_name;
 
                 self::$instance->autoloader = new BP_Autoloader();
+
+				// PSR-4 compliant packages
+				self::$instance->psr4autoloader = new BP_Psr4Autoloader();
+				self::$instance->psr4autoloader->register();
+				self::$instance->psr4autoloader->addNamespace( 'devinsays\optionsframework', WPBP_DIR . '/Vendors/optionsframework' );
+
                 self::$instance->debugging = new BP_Utils_Debugging();
                 self::$instance->logging = new BP_Utils_Logging();	
 				self::$instance->options = new BP_Options( 'myoptions', $options );
@@ -472,6 +478,9 @@ $options = array();
          * Loads PHP files that required by the plug-in
          */
         private function load_dependencies() {
+            // Global
+            require_once( 'inc/class-autoloader.php' );	
+
             // Admin Panel
             if ( is_admin() ) {
                 require_once( 'admin/forms.php' );
@@ -484,11 +493,6 @@ $options = array();
             if ( ! is_admin() ) {
 
             }
-
-            // Global
-            require_once( 'inc/class-autoloader.php' );	
-
-			require_once( 'Vendors/optionsframework/Adapter.php' );
         }
 
         /**
