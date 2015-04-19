@@ -10,5 +10,10 @@
 		"twig/twig": "1.18.1"
     },
     "require-dev": { 
+    },
+	"autoload": {
+        "psr-4": {
+		"devinsays\\optionsframework\\": "vendor/optionsframework/"
+		}
     }
 }
