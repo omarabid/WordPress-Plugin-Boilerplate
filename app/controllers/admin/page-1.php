@@ -17,6 +17,9 @@ if ( class_exists( 'BP_Admin_Controller_Page_1' ) ) {
  */
 class BP_Admin_Controller_Page_1 extends BP_MVC_Admin_Controller {
 	protected $page_id = 'page-1';
-	protected $child = false;
+	protected $title = 'Page 1 Title';
+	protected $name = 'Page 1';
+	protected $parent = false;
 	protected $cap = 'manage_options';	
+	protected $show = true;
 }
