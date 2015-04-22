@@ -1,3 +1,3 @@
 <div class="wrap">
-	<h2></h2>
+	<h2>{{ title }}</h2>	
 </div>

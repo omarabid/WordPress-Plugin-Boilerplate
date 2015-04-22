@@ -22,4 +22,15 @@ class BP_Admin_View_Page_2 extends BP_MVC_Admin_View {
 	 * @var string
 	 */
 	protected $template_id = 'page-2';
+
+	public function __construct( $data ) {
+		parent::__construct( $data );
+		$this->options_framework = new BP_Options( 'page2_options', $this->data['settings'] );	
+	}
+
+	public function display() {
+		parent::display();	
+
+		$this->options_framework->build_panel();
+	}
 }
