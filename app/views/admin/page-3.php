@@ -15,6 +15,6 @@ if ( class_exists( 'BP_Admin_View_Page_3' ) ) {
  * @package app/views
  * @author Abid Omar
  */
-class BP_Admin_View_Page_3 {
+class BP_Admin_View_Page_3 extends BP_MVC_Admin_View {
 
 }
