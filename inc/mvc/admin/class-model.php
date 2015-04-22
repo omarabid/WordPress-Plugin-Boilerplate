@@ -18,5 +18,5 @@ if ( class_exists( 'BP_MVC_Admin_Model' ) ) {
 abstract class BP_MVC_Admin_Model {
 	public function __construct() {
 
-	}
+	}	
 }

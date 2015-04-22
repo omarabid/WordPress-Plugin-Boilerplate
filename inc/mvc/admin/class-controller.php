@@ -17,13 +17,55 @@ if ( class_exists( 'BP_MVC_Admin_Controller' ) ) {
  */
 abstract class BP_MVC_Admin_Controller {
 
-	public $view;
+	/**
+	 * Admin Page Id
+	 * @var string
+	 */
 	protected $page_id;
+
+	/**
+	 * Admin Page Title
+	 * @var string
+	 */
 	protected $title;
+
+	/**
+	 * Admin Page Menu Title
+	 * @var string
+	 */
 	protected $name;
+
+	/**
+	 * False if a top level menu, a string otherwise
+	 * @var bool|string
+	 */
 	protected $parent;
-	protected $cap;
-	protected $show = false;
+
+	/**
+	 * Page access capability
+	 * @var string
+	 */
+	protected $cap;	
+
+	/**
+	 * Display or Hide the menu
+	 * @var bool 
+	 */
+	protected $show;
+
+	/**
+	 * Template id
+	 * @var string
+	 */
+	protected $template;
+
+
+	/**
+	 * Specify a view to display the template
+	 *
+	 * @var string
+	 */
+	protected $view;
 
 	/**
 	 *
@@ -49,8 +91,16 @@ abstract class BP_MVC_Admin_Controller {
 		}
 	}
 
+	/**
+	 * Renders the page using the controller defined View and Template Id
+	 *
+	 * @return void
+	 */
 	public function render_page() {
-
+		// Load the View File
+		require_once( WPBP_DIR . '/app/views/admin/' . $this->page_id . '.php' );
+		$view = new $this->view( $this->template );
+		$view->display();
 	}
 
 	public function process_get() {
