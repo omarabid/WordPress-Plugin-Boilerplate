@@ -16,10 +16,53 @@ if ( class_exists( 'BP_Admin_Controller_Page_2' ) ) {
  * @author Abid Omar
  */
 class BP_Admin_Controller_Page_2 extends BP_MVC_Admin_Controller {
+	/**
+	 * Admin Page Id
+	 * @var string
+	 */
 	protected $page_id = 'page-2';
+
+	/**
+	 * Admin Page Title
+	 * @var string
+	 */
 	protected $title = 'Page 2 Title';
+
+	/**
+	 * Admin Page Menu Title
+	 * @var string
+	 */
 	protected $name = 'Page 2';
+
+	/**
+	 * False if a top level menu, a string otherwise
+	 * @var bool|string
+	 */
 	protected $parent = 'page-1';
+
+	/**
+	 * Page access capability
+	 * @var string
+	 */
 	protected $cap = 'manage_options';	
-protected $show = true;
+
+	/**
+	 * Display or Hide the menu
+	 * @var bool 
+	 */
+	protected $show = true;
+
+	/**
+	 * Template id
+	 * @var string
+	 */
+	protected $template = 'page-2';
+
+
+	/**
+	 * Specify a view to display the template
+	 *
+	 * @var string
+	 */
+	protected $view = 'BP_Admin_View_Page_2';
 }
