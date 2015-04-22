@@ -16,5 +16,12 @@ if ( class_exists( 'BP_Admin_Model_Page_1' ) ) {
  * @author Abid Omar
  */
 class BP_Admin_Model_Page_1 extends BP_MVC_Admin_Model {
-	
+	protected $data = array(
+		'title' => 'Welcome to the WordPress Boilerplate Plugin',
+		'list' => array(
+			array( 'key' => 'value 1' ),
+			array( 'key' => 'value 2' ),
+			array( 'key' => 'value 3' ),
+		),
+	);
 }
