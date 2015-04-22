@@ -16,9 +16,6 @@ if ( class_exists( 'BP_MVC_Admin_Model' ) ) {
  * @author Abid Omar
  */
 abstract class BP_MVC_Admin_Model {
-	public $title;
-	public $name;
-
 	public function __construct() {
 
 	}
