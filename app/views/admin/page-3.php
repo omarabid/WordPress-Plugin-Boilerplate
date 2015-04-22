@@ -16,5 +16,10 @@ if ( class_exists( 'BP_Admin_View_Page_3' ) ) {
  * @author Abid Omar
  */
 class BP_Admin_View_Page_3 extends BP_MVC_Admin_View {
-
+	/**
+	 * Template filename
+	 *
+	 * @var string
+	 */
+	protected $template_id = 'page-3';
 }

@@ -53,16 +53,16 @@ class BP_Admin_Controller_Page_1 extends BP_MVC_Admin_Controller {
 	protected $show = true;
 
 	/**
-	 * Template id
-	 * @var string
-	 */
-	protected $template = 'page-1';
-
-
-	/**
 	 * Specify a view to display the template
 	 *
 	 * @var string
 	 */
 	protected $view = 'BP_Admin_View_Page_1';
+
+	/**
+	 * Specify a model to load the data 
+	 *
+	 * @var string
+	 */
+	protected $model = 'BP_Admin_Model_Page_1';
 }

@@ -16,7 +16,13 @@ if ( class_exists( 'BP_MVC_Admin_Model' ) ) {
  * @author Abid Omar
  */
 abstract class BP_MVC_Admin_Model {
+	protected $data = array();
+
 	public function __construct() {
 
-	}	
+	}
+
+	public function get_data() {
+		return $this->data;
+	}
 }

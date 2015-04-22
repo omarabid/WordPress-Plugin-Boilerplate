@@ -1,3 +1,3 @@
-<div>
-	Page 2
+<div class="wrap">
+	<h2></h2>
 </div>

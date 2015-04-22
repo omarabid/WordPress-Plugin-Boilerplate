@@ -49,18 +49,26 @@ abstract class BP_MVC_Admin_View {
 	 * @param string $template_id
 	 * @return void
 	 */
-	public function __construct( $template_id ) {
-		$this->template_id = $template_id . '.tpl';
+	public function __construct( $data ) {
+		// Add the template extension
+		$this->template_id = $this->template_id . '.tpl';
+
+		// Initialize the Twig Engine
 		$this->loader = new Twig_Loader_Filesystem( WPBP_DIR . '/app/templates/admin' );
 		$this->engine = new Twig_Environment( $this->loader );
+
+		// Load the template into the Engine
 		$this->template = $this->engine->loadTemplate( $this->template_id );
+
+		$this->data = $data;
 	}
 
 	/**
+	 * Render the template to HTML
 	 *
 	 * @return void
 	 */
 	public function display() {
-		echo $this->template->render(array());
+		echo $this->template->render( $this->data );
 	}	
 }

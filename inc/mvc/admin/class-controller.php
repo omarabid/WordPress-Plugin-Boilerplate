@@ -54,11 +54,11 @@ abstract class BP_MVC_Admin_Controller {
 	protected $show;
 
 	/**
-	 * Template id
+	 * Specify a model
+	 *
 	 * @var string
 	 */
-	protected $template;
-
+	protected $model;
 
 	/**
 	 * Specify a view to display the template
@@ -77,6 +77,17 @@ abstract class BP_MVC_Admin_Controller {
 	 */
 	public function __construct() {	
 		add_action( 'admin_menu', array( &$this, 'add_menu' ) );
+
+		// Load the Model File
+		require_once( WPBP_DIR . '/app/models/admin/' . $this->page_id . '.php' );
+		// Load the View File
+		require_once( WPBP_DIR . '/app/views/admin/' . $this->page_id . '.php' );
+
+		// Initialize the model
+		$this->model = new $this->model();
+
+		// Initialize the view
+		$this->view = new $this->view( $this->model->get_data() );
 	}
 
 	public function add_menu() {
@@ -97,10 +108,7 @@ abstract class BP_MVC_Admin_Controller {
 	 * @return void
 	 */
 	public function render_page() {
-		// Load the View File
-		require_once( WPBP_DIR . '/app/views/admin/' . $this->page_id . '.php' );
-		$view = new $this->view( $this->template );
-		$view->display();
+		$this->view->display();
 	}
 
 	public function process_get() {
