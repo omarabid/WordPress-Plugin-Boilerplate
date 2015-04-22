@@ -68,6 +68,13 @@ abstract class BP_MVC_Admin_Controller {
 	protected $view;
 
 	/**
+	 * Current Admin Page Screen name
+	 *
+	 * @var string
+	 */
+	protected $screen_name;
+
+	/**
 	 *
 	 * @param string $page_id Page Unique Identifier
 	 * @param bool|string $child False if the page is a top level menu, or the parent menu id
@@ -79,23 +86,8 @@ abstract class BP_MVC_Admin_Controller {
 		// Add the Admin Page to the WordPress menu
 		add_action( 'admin_menu', array( &$this, 'add_menu' ) );
 
-		// Load the Page resources
-		add_action( 'admin_print_scripts', array( &$this, 'load_scripts' ) );
-		add_action( 'admin_print_styles', array( &$this, 'load_styles' ) );
-
-		// WordPress Contextual Help
-		add_filter( 'contextual_help', array( &$this, 'contextual_help' ) );
-
-		// Load the Model File
-		require_once( WPBP_DIR . '/app/models/admin/' . $this->page_id . '.php' );
-		// Load the View File
-		require_once( WPBP_DIR . '/app/views/admin/' . $this->page_id . '.php' );
-
-		// Initialize the model
-		$this->model = new $this->model();
-
-		// Initialize the view
-		$this->view = new $this->view( $this->model->get_data() );
+		// Check that we are on the right screen
+		add_action( 'current_screen', array( &$this, 'validate_screen' ) );
 	}
 
 	/**
@@ -109,9 +101,42 @@ abstract class BP_MVC_Admin_Controller {
 		}
 
 		if ( $this->parent ) {	
-			add_submenu_page( $this->parent, $this->title, $this->name, $this->cap, $this->page_id, array( &$this, 'render_page' ) );
+			$this->screen_name = add_submenu_page( $this->parent, $this->title, $this->name, $this->cap, $this->page_id, array( &$this, 'render_page' ) );
 		} else {
-			add_menu_page( $this->title, $this->name, $this->cap, $this->page_id, array( &$this, 'render_page' ) );	
+			$this->screen_name = add_menu_page( $this->title, $this->name, $this->cap, $this->page_id, array( &$this, 'render_page' ) );	
+		}
+	}
+
+	/**
+ * Verify that we are on the correct screen
+ *
+ * @return void
+ */
+	public function validate_screen() {
+		$screen = get_current_screen();
+		if ( $screen->id === $this->screen_name ) {
+			// Load the Page resources
+			add_action( 'admin_print_scripts', array( &$this, 'load_scripts' ) );
+			add_action( 'admin_print_styles', array( &$this, 'load_styles' ) );
+
+			// WordPress Contextual Help
+			add_filter( 'contextual_help', array( &$this, 'contextual_help' ) );	
+			// Load the Model File
+			require_once( WPBP_DIR . '/app/models/admin/' . $this->page_id . '.php' );
+			// Load the View File
+			require_once( WPBP_DIR . '/app/views/admin/' . $this->page_id . '.php' );
+
+			// Initialize the model
+			$this->model = new $this->model();
+
+			// Initialize the view
+			$this->view = new $this->view( $this->model->get_data() );
+
+			// Process GET requests
+			$this->process_get();
+
+			// Process POST requests
+			$this->process_post();
 		}
 	}
 
@@ -120,7 +145,7 @@ abstract class BP_MVC_Admin_Controller {
 	 *
 	 * @return void
 	 */
-	public function render_page() {
+	public function render_page() {	
 		$this->view->display();
 	}
 
@@ -130,7 +155,7 @@ abstract class BP_MVC_Admin_Controller {
 	 * @return void
 	 */
 	protected function process_get() {
-
+		
 	}
 
 	/**
@@ -139,7 +164,7 @@ abstract class BP_MVC_Admin_Controller {
 	 * @return void
 	 */
 	protected function process_post() {
-
+		
 	}
 
 	/**
@@ -160,13 +185,12 @@ abstract class BP_MVC_Admin_Controller {
 
 	}
 
+	/**
+	 * Contextual Help
+	 *
+	 * @return void
+	 */
 	public function contextual_help() {
-		$screen = get_current_screen();
 
-		$screen->add_help_tab( array(
-			'id'      => 'my_help_tab',
-			'title'   => 'Help',
-			'content' => "Page 1 Help"
-		) );
 	}
 }
