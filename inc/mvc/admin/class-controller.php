@@ -78,6 +78,9 @@ abstract class BP_MVC_Admin_Controller {
 	public function __construct() {	
 		add_action( 'admin_menu', array( &$this, 'add_menu' ) );
 
+		// WordPress Contextual Help
+		add_filter( 'contextual_help', array( &$this, 'contextual_help' ) );
+
 		// Load the Model File
 		require_once( WPBP_DIR . '/app/models/admin/' . $this->page_id . '.php' );
 		// Load the View File
@@ -125,5 +128,15 @@ abstract class BP_MVC_Admin_Controller {
 
 	public function load_styles() {
 
+	}
+
+	public function contextual_help() {
+		$screen = get_current_screen();
+
+		$screen->add_help_tab( array(
+			'id'      => 'my_help_tab',
+			'title'   => 'Help',
+			'content' => "Page 1 Help"
+		) );
 	}
 }
