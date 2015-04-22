@@ -71,7 +71,9 @@ class BP_Admin_Model_Page_2 extends BP_MVC_Admin_Model {
 		$options_categories = array();
 		$options_categories_obj = get_categories();
 		foreach ($options_categories_obj as $category) {
-			$options_categories[$category->cat_ID] = $category->cat_name;
+            if ( isset( $category->cat_name ) ) {
+                $options_categories[$category->cat_ID] = $category->cat_name;
+            }
 		}
 		// Pull all tags into an array
 		$options_tags = array();
@@ -83,9 +85,11 @@ class BP_Admin_Model_Page_2 extends BP_MVC_Admin_Model {
 		$options_pages = array();
 		$options_pages_obj = get_pages( 'sort_column=post_parent,menu_order' );
 		$options_pages[''] = 'Select a page:';
-		foreach ($options_pages_obj as $page) {
-			$options_pages[$page->ID] = $page->post_title;
-		}
+        if ( is_array( $options_pages_obj ) ) {
+            foreach ($options_pages_obj as $page) {
+                $options_pages[$page->ID] = $page->post_title;
+            }
+        }
 		// If using image radio buttons, define a directory path
 		$imagepath =  get_template_directory_uri() . '/images/';
 		$options = array();
