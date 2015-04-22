@@ -73,4 +73,14 @@ class BP_Admin_Controller_Page_1 extends BP_MVC_Admin_Controller {
 	public function load_styles() {
 		wp_enqueue_style( 'page-1', WPBP_URLPATH . '/app/files/css/page-1.css' );
 	}
+
+	public function contextual_help() {
+		$screen = get_current_screen();
+
+		$screen->add_help_tab( array(
+			'id'      => 'my_help_tab',
+			'title'   => 'Help',
+			'content' => "Page 1 Help"
+		) );
+	}
 }
