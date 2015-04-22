@@ -65,4 +65,12 @@ class BP_Admin_Controller_Page_1 extends BP_MVC_Admin_Controller {
 	 * @var string
 	 */
 	protected $model = 'BP_Admin_Model_Page_1';
+
+	public function load_scripts() {
+		wp_enqueue_script( 'page-1', WPBP_URLPATH . '/app/files/js/page-1.js', array( 'jquery' ) );
+	}
+
+	public function load_styles() {
+		wp_enqueue_style( 'page-1', WPBP_URLPATH . '/app/files/css/page-1.css' );
+	}
 }

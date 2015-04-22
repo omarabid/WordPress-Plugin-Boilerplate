@@ -76,7 +76,12 @@ abstract class BP_MVC_Admin_Controller {
 	 * @return void
 	 */
 	public function __construct() {	
+		// Add the Admin Page to the WordPress menu
 		add_action( 'admin_menu', array( &$this, 'add_menu' ) );
+
+		// Load the Page resources
+		add_action( 'admin_print_scripts', array( &$this, 'load_scripts' ) );
+		add_action( 'admin_print_styles', array( &$this, 'load_styles' ) );
 
 		// WordPress Contextual Help
 		add_filter( 'contextual_help', array( &$this, 'contextual_help' ) );
@@ -93,6 +98,11 @@ abstract class BP_MVC_Admin_Controller {
 		$this->view = new $this->view( $this->model->get_data() );
 	}
 
+	/**
+	 * Add the Admin PAge to the WordPress Menu
+	 *
+	 * @return void
+	 */
 	public function add_menu() {
 		if ( !isset( $this->page_id ) && !isset( $this->title ) && !isset( $this->name ) && !isset( $this->parent ) && !isset( $this->cap ) ) {
 			return;
@@ -114,18 +124,38 @@ abstract class BP_MVC_Admin_Controller {
 		$this->view->display();
 	}
 
-	public function process_get() {
+	/**
+	 * Process GET Requests
+	 *
+	 * @return void
+	 */
+	protected function process_get() {
 
 	}
 
-	public function process_post() {
+	/**
+	 * Process POST Requests
+	 *
+	 * @return void
+	 */
+	protected function process_post() {
 
 	}
 
+	/**
+	 * Load the Page Scripts 
+	 *
+	 * @return void
+	 */
 	public function load_scripts() {
 
 	}
 
+	/**
+	 * Load the Page Styles 
+	 *
+	 * @return void
+	 */
 	public function load_styles() {
 
 	}
