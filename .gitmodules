@@ -1,3 +1,0 @@
-[submodule "vendor/optionsframework/src"]
-	path = vendor/optionsframework/src
-	url = git@github.com:omarabid/options-framework-plugin.git
