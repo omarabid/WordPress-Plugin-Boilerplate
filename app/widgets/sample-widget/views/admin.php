@@ -1,0 +1,4 @@
+<!-- This file is used to markup the administration form of the widget. -->
+<p>
+Normal HTML Markup
+</p>
