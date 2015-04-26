@@ -29,6 +29,8 @@ class BP_MVC {
 		$this->load_admin_pages();
 		// Front Pages	
 		$this->load_front_pages();
+		// Widgets
+		$this->load_widgets();
 	}
 
 	private function load_admin_pages() {
@@ -40,5 +42,13 @@ class BP_MVC {
 
 	private function load_front_pages() {
 
+	}
+
+	private function load_widgets() {
+		foreach( $this->router['widgets'] as $dir=>$class ) {
+			require_once( $this->app_path . '/widgets/' . $dir . '/class-widget.php' );
+
+			add_action( 'widgets_init', create_function( '', 'register_widget("' . $class . '");' ) );
+		}
 	}
 }

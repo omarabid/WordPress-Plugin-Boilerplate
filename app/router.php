@@ -8,4 +8,7 @@ return array(
 	'front' => array(
 
 	),
+	'widgets' => array(
+		'sample-widget' => 'BP_Widgets_Sample_Widget',	
+	),
 );
