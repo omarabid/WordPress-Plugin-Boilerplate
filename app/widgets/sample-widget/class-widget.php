@@ -129,6 +129,7 @@ class BP_Widgets_Sample_Widget extends WP_Widget {
 		$instance = $old_instance;
 
 		// TODO: Here is where you update your widget's old values with the new, incoming values
+		$instance['field'] = strip_tags( $new_instance['field'] );
 
 		return $instance;
 
