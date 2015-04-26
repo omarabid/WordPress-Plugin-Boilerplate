@@ -121,17 +121,12 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
             register_deactivation_hook( __FILE__, array( &$this, 'deactivate' ) );	
 
             //
-            // 4. Load Widgets
-            //
-            add_action( 'widgets_init', array( &$this, 'register_widget' ) );
-
-            //
-            // 5. i18n
+            // 4. i18n
             //
             add_action( 'init', array( &$this, 'i18n' ) );
 
             //
-            // 6. Actions
+            // 5. Actions
             //
             add_action( 'plugins_loaded', array( &$this, 'start' ), 0, 100 );
         }
@@ -243,20 +238,6 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
          */
         public function deactivate() {
 
-        }
-
-        /**
-         * Called when the plug-in is uninstalled
-         */
-        static function uninstall() {
-
-        }
-
-        /**
-         * Register the widgets
-         */
-        public function register_widget() {
-            register_widget( 'BP_Widgets_Main' );
         }
 
         /**
