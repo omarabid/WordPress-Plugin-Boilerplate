@@ -15,6 +15,7 @@
         "php": ">=5.3.2",
 		"pippinsplugins/wp-logging": "dev-master",
 		"omarabid/wp-notify": "1.0",
+		"omarabid/wp-debugbar": "dev-master",
 		"omarabid/wp-autoupdate": "dev-master",
 		"twig/twig": "1.18.1"
     },
