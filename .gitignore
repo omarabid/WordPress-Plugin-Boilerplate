@@ -3,4 +3,5 @@
 *.map
 tests/wp-tests-config.php
 node_modules
+vendor
 build
