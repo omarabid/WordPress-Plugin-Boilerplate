@@ -4,20 +4,63 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "745f0ff0640b7706b0f350a14545674e",
+    "hash": "16bc52e6d8c8c0af002e40431b7c9755",
     "packages": [
         {
-            "name": "pippinsplugins/WP-Logging",
+            "name": "omarabid/wp-notify",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/omarabid/wp-notify.git",
+                "reference": "261638beb5055ed58fb41018ab4bcb8847142422"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/omarabid/wp-notify/zipball/261638beb5055ed58fb41018ab4bcb8847142422",
+                "reference": "261638beb5055ed58fb41018ab4bcb8847142422",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "omarabid\\WP_Notify\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abid Omar",
+                    "email": "contact@omarabid.com",
+                    "homepage": "http://omarabid.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A small notification class to manage your WordPress Admin Notifications.",
+            "homepage": "http://omarabid.com",
+            "keywords": [
+                "notifications",
+                "wordpress"
+            ],
+            "time": "2015-04-29 15:37:20"
+        },
+        {
+            "name": "pippinsplugins/wp-logging",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/omarabid/WP-Logging.git",
-                "reference": "63efd54747ba3b9a269b70dd0c8c57f624bc13cb"
+                "reference": "54cfe25c6e92b88c5d467bd9b520560376bc7670"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/omarabid/WP-Logging/zipball/63efd54747ba3b9a269b70dd0c8c57f624bc13cb",
-                "reference": "63efd54747ba3b9a269b70dd0c8c57f624bc13cb",
+                "url": "https://api.github.com/repos/omarabid/WP-Logging/zipball/54cfe25c6e92b88c5d467bd9b520560376bc7670",
+                "reference": "54cfe25c6e92b88c5d467bd9b520560376bc7670",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +91,7 @@
             "support": {
                 "source": "https://github.com/omarabid/WP-Logging/tree/master"
             },
-            "time": "2015-04-29 12:43:11"
+            "time": "2015-04-29 13:30:19"
         },
         {
             "name": "twig/twig",

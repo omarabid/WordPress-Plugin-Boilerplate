@@ -1,23 +1,13 @@
 <?php
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-// Exit if class is already defined
-if ( class_exists( 'BP_Utils_Notify' ) ) {
-    return;
-}
-
 /**
  * WordPress Easy Notifications
  *
- * @class BP_Utils_Notify
+ * @class WP_Notify 
  * @version 1.0.0
- * @package Inc
- * @subpackage Utils
+ *
  * @author Abid Omar
  */
-class BP_Utils_Notify {
+class WP_Notify {
     /**
      * Prefix (namespace) of the notices.
      *

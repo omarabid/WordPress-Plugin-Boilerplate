@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'pippinsplugins\\' => array($vendorDir . '/pippinsplugins/WP-Logging'),
+    'pippinsplugins\\' => array($vendorDir . '/pippinsplugins/wp-logging'),
+    'omarabid\\WP_Notify\\' => array($vendorDir . '/omarabid/wp-notify'),
     'devinsays\\optionsframework\\' => array($vendorDir . '/optionsframework'),
 );
