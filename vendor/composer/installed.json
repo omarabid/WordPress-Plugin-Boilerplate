@@ -283,5 +283,42 @@
             "options",
             "wordpress"
         ]
+    },
+    {
+        "name": "omarabid/wp-mvc",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/omarabid/wp-mvc.git",
+            "reference": "76d77d419096bc4c204fb267b190fc415f1832e1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/omarabid/wp-mvc/zipball/76d77d419096bc4c204fb267b190fc415f1832e1",
+            "reference": "76d77d419096bc4c204fb267b190fc415f1832e1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "time": "2015-04-29 20:33:13",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "omarabid\\WP_MVC\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "description": "MVC Framework for WordPress",
+        "homepage": "http://omarabid.com",
+        "keywords": [
+            "mvc",
+            "wordpress"
+        ]
     }
 ]

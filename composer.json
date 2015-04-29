@@ -18,13 +18,9 @@
 		"omarabid/wp-debugbar": "dev-master",
 		"omarabid/wp-autoupdate": "dev-master",
 		"omarabid/wp-options": "dev-master",
+		"omarabid/wp-mvc": "dev-master",
 		"twig/twig": "1.18.1"
     },
     "require-dev": { 
-    },
-	"autoload": {
-        "psr-4": {
-		"devinsays\\optionsframework\\": "vendor/optionsframework/"
-		}
     }
 }
