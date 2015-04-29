@@ -57,5 +57,51 @@
         "keywords": [
             "templating"
         ]
+    },
+    {
+        "name": "pippinsplugins/WP-Logging",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/omarabid/WP-Logging.git",
+            "reference": "63efd54747ba3b9a269b70dd0c8c57f624bc13cb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/omarabid/WP-Logging/zipball/63efd54747ba3b9a269b70dd0c8c57f624bc13cb",
+            "reference": "63efd54747ba3b9a269b70dd0c8c57f624bc13cb",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "time": "2015-04-29 12:43:11",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "pippinsplugins\\": ""
+            }
+        },
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Pippin Williamson"
+            }
+        ],
+        "description": "A WordPress class that provides a general logging system.",
+        "homepage": "https://github.com/pippinsplugins/WP-Logging",
+        "keywords": [
+            "log",
+            "logger",
+            "logging",
+            "wordpress"
+        ],
+        "support": {
+            "source": "https://github.com/omarabid/WP-Logging/tree/master"
+        }
     }
 ]

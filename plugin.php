@@ -84,7 +84,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
                 self::$instance = new $class_name;
                 self::$instance->autoloader = new BP_Autoloader();
                 self::$instance->debugging = new BP_Utils_Debugging();
-                self::$instance->logging = new BP_Utils_Logging();	
+                self::$instance->logging = new \pippinsplugins\WP_Logging();	
 				self::$instance->app = new BP_MVC( WPBP_DIR . '/app' );
             }
 

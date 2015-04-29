@@ -5,8 +5,15 @@
     "keywords": ["wordpress", "plugin", "boilerplate"],
     "homepage": "https://github.com/omarabid/WordPress-Plugin-Boilerplate",
     "license": "GPL-2.0+",
+	"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/omarabid/WP-Logging"
+        }
+    ],
     "require": {
         "php": ">=5.3.2",
+		"pippinsplugins/WP-Logging": "dev-master",
 		"twig/twig": "1.18.1"
     },
     "require-dev": { 
