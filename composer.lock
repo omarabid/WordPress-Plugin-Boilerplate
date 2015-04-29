@@ -4,8 +4,94 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "16bc52e6d8c8c0af002e40431b7c9755",
+    "hash": "29f5314c8163627247b33230ea54acee",
     "packages": [
+        {
+            "name": "omarabid/wp-autoupdate",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/omarabid/Self-Hosted-WordPress-Plugin-repository.git",
+                "reference": "db3081b81c337431856777a6c44c86d501d174da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/omarabid/Self-Hosted-WordPress-Plugin-repository/zipball/db3081b81c337431856777a6c44c86d501d174da",
+                "reference": "db3081b81c337431856777a6c44c86d501d174da",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "omarabid\\WP_AutoUpdate\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abid Omar",
+                    "email": "contact@omarabid.com",
+                    "homepage": "http://omarabid.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "Create your own self-hosted WordPress Plugin repository for pushing automatic updates.",
+            "homepage": "http://omarabid.com",
+            "keywords": [
+                "auto-update",
+                "wordpress"
+            ],
+            "time": "2015-04-29 17:07:32"
+        },
+        {
+            "name": "omarabid/wp-debugbar",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/omarabid/wp-debugbar.git",
+                "reference": "46fb265beb27cee6d51bcebecf174ae5c6a23b71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/omarabid/wp-debugbar/zipball/46fb265beb27cee6d51bcebecf174ae5c6a23b71",
+                "reference": "46fb265beb27cee6d51bcebecf174ae5c6a23b71",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "omarabid\\WP_DebugBar\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abid Omar",
+                    "email": "contact@omarabid.com",
+                    "homepage": "http://omarabid.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A debugging class for WordPress plugins.",
+            "homepage": "http://omarabid.com",
+            "keywords": [
+                "debugging",
+                "wordpress"
+            ],
+            "time": "2015-04-29 16:35:15"
+        },
         {
             "name": "omarabid/wp-notify",
             "version": "v1.0",
@@ -155,7 +241,9 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "pippinsplugins/wp-logging": 20
+        "pippinsplugins/wp-logging": 20,
+        "omarabid/wp-debugbar": 20,
+        "omarabid/wp-autoupdate": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
