@@ -3,6 +3,8 @@ filter:
     excluded_paths:
         - tests/*
         - vendor/*
+        - bin/*
+        - i18n/*
 tools:
     php_code_sniffer:
         config:
