@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "29f5314c8163627247b33230ea54acee",
+    "hash": "26b16fdacc911be344d48140c0bac05b",
     "packages": [
         {
             "name": "omarabid/wp-autoupdate",
@@ -136,6 +136,49 @@
             "time": "2015-04-29 15:37:20"
         },
         {
+            "name": "omarabid/wp-options",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/omarabid/wp-options.git",
+                "reference": "f47ee092a36b10c44f233fc9906a25b472186975"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/omarabid/wp-options/zipball/f47ee092a36b10c44f233fc9906a25b472186975",
+                "reference": "f47ee092a36b10c44f233fc9906a25b472186975",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "omarabid\\WP_Options\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abid Omar",
+                    "email": "contact@omarabid.com",
+                    "homepage": "http://omarabid.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A Fork of the Options Framework",
+            "homepage": "http://omarabid.com",
+            "keywords": [
+                "options",
+                "wordpress"
+            ],
+            "time": "2015-04-29 20:16:43"
+        },
+        {
             "name": "pippinsplugins/wp-logging",
             "version": "dev-master",
             "source": {
@@ -243,7 +286,8 @@
     "stability-flags": {
         "pippinsplugins/wp-logging": 20,
         "omarabid/wp-debugbar": 20,
-        "omarabid/wp-autoupdate": 20
+        "omarabid/wp-autoupdate": 20,
+        "omarabid/wp-options": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

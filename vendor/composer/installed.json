@@ -238,5 +238,50 @@
             "auto-update",
             "wordpress"
         ]
+    },
+    {
+        "name": "omarabid/wp-options",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/omarabid/wp-options.git",
+            "reference": "f47ee092a36b10c44f233fc9906a25b472186975"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/omarabid/wp-options/zipball/f47ee092a36b10c44f233fc9906a25b472186975",
+            "reference": "f47ee092a36b10c44f233fc9906a25b472186975",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2015-04-29 20:16:43",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "omarabid\\WP_Options\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Abid Omar",
+                "email": "contact@omarabid.com",
+                "homepage": "http://omarabid.com",
+                "role": "Lead Developer"
+            }
+        ],
+        "description": "A Fork of the Options Framework",
+        "homepage": "http://omarabid.com",
+        "keywords": [
+            "options",
+            "wordpress"
+        ]
     }
 ]

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'pippinsplugins\\' => array($vendorDir . '/pippinsplugins/wp-logging'),
+    'omarabid\\WP_Options\\' => array($vendorDir . '/omarabid/wp-options'),
     'omarabid\\WP_Notify\\' => array($vendorDir . '/omarabid/wp-notify'),
     'omarabid\\WP_DebugBar\\' => array($vendorDir . '/omarabid/wp-debugbar'),
     'omarabid\\WP_AutoUpdate\\' => array($vendorDir . '/omarabid/wp-autoupdate'),

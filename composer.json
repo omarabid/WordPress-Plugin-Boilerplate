@@ -17,6 +17,7 @@
 		"omarabid/wp-notify": "1.0",
 		"omarabid/wp-debugbar": "dev-master",
 		"omarabid/wp-autoupdate": "dev-master",
+		"omarabid/wp-options": "dev-master",
 		"twig/twig": "1.18.1"
     },
     "require-dev": { 
