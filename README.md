@@ -12,7 +12,7 @@ WordPress Plugin Boilerplate aims to revolutionize Plugin development for WordPr
 # Credits
 
 BP uses code from the following projects and repositories
-- [WP-Logging]( https://pippinsplugins.com/wp-logging/ )
+- [monolog](https://github.com/Seldaek/monolog)
 - [Self-Hosted-WordPress-Plugin-repository](https://github.com/omarabid/Self-Hosted-WordPress-Plugin-repository)
 - [WordPress-Widget-Boilerplate](https://github.com/tommcfarlin/WordPress-Widget-Boilerplate)
 - [Options Framework](https://github.com/devinsays/options-framework-plugin)

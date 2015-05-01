@@ -12,8 +12,9 @@
 		"wpplex/wp-autoupdate": "dev-master",
 		"wpplex/wp-options": "dev-master",
 		"wpplex/wp-mvc": "dev-master",
-		"twig/twig": "1.18.1"
-    },
+		"twig/twig": "1.18.1",
+		"monolog/monolog": "1.13.1"
+	},
     "require-dev": { 
     }
 }
