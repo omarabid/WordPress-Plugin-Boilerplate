@@ -266,12 +266,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpplex/wp-mvc.git",
-                "reference": "a330ca29b9cae19b7077ba6b86300410f0255639"
+                "reference": "9778379d42f949462e76d969fb45ec37fc789a75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpplex/wp-mvc/zipball/a330ca29b9cae19b7077ba6b86300410f0255639",
-                "reference": "a330ca29b9cae19b7077ba6b86300410f0255639",
+                "url": "https://api.github.com/repos/wpplex/wp-mvc/zipball/9778379d42f949462e76d969fb45ec37fc789a75",
+                "reference": "9778379d42f949462e76d969fb45ec37fc789a75",
                 "shasum": ""
             },
             "require": {
@@ -293,7 +293,7 @@
                 "mvc",
                 "wordpress"
             ],
-            "time": "2015-05-01 20:11:19"
+            "time": "2015-05-01 20:38:09"
         },
         {
             "name": "wpplex/wp-notify",
