@@ -4,259 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "196c692bbcee1c488dfbcf12263ab748",
+    "hash": "e22a011be791cbe54dd850315f783858",
     "packages": [
-        {
-            "name": "omarabid/wp-autoupdate",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/omarabid/Self-Hosted-WordPress-Plugin-repository.git",
-                "reference": "efa746642576138f55a87b65e776fe8e1e363a20"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/omarabid/Self-Hosted-WordPress-Plugin-repository/zipball/efa746642576138f55a87b65e776fe8e1e363a20",
-                "reference": "efa746642576138f55a87b65e776fe8e1e363a20",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "omarabid\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abid Omar",
-                    "email": "contact@omarabid.com",
-                    "homepage": "http://omarabid.com",
-                    "role": "Lead Developer"
-                }
-            ],
-            "description": "Create your own self-hosted WordPress Plugin repository for pushing automatic updates.",
-            "homepage": "http://omarabid.com",
-            "keywords": [
-                "auto-update",
-                "wordpress"
-            ],
-            "time": "2015-04-30 19:04:03"
-        },
-        {
-            "name": "omarabid/wp-debugbar",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/omarabid/wp-debugbar.git",
-                "reference": "6d94068efc0c06a997586e54e5b64e3a877cd10b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/omarabid/wp-debugbar/zipball/6d94068efc0c06a997586e54e5b64e3a877cd10b",
-                "reference": "6d94068efc0c06a997586e54e5b64e3a877cd10b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "omarabid\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abid Omar",
-                    "email": "contact@omarabid.com",
-                    "homepage": "http://omarabid.com",
-                    "role": "Lead Developer"
-                }
-            ],
-            "description": "A debugging class for WordPress plugins.",
-            "homepage": "http://omarabid.com",
-            "keywords": [
-                "debugging",
-                "wordpress"
-            ],
-            "time": "2015-04-30 19:18:31"
-        },
-        {
-            "name": "omarabid/wp-mvc",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/omarabid/wp-mvc.git",
-                "reference": "ee81d80a7d157b423a2a3574914fffbfc15c4e34"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/omarabid/wp-mvc/zipball/ee81d80a7d157b423a2a3574914fffbfc15c4e34",
-                "reference": "ee81d80a7d157b423a2a3574914fffbfc15c4e34",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "omarabid\\WP_MVC\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "MVC Framework for WordPress",
-            "homepage": "http://omarabid.com",
-            "keywords": [
-                "mvc",
-                "wordpress"
-            ],
-            "time": "2015-04-30 19:57:42"
-        },
-        {
-            "name": "omarabid/wp-notify",
-            "version": "v1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/omarabid/wp-notify.git",
-                "reference": "261638beb5055ed58fb41018ab4bcb8847142422"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/omarabid/wp-notify/zipball/261638beb5055ed58fb41018ab4bcb8847142422",
-                "reference": "261638beb5055ed58fb41018ab4bcb8847142422",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "omarabid\\WP_Notify\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abid Omar",
-                    "email": "contact@omarabid.com",
-                    "homepage": "http://omarabid.com",
-                    "role": "Lead Developer"
-                }
-            ],
-            "description": "A small notification class to manage your WordPress Admin Notifications.",
-            "homepage": "http://omarabid.com",
-            "keywords": [
-                "notifications",
-                "wordpress"
-            ],
-            "time": "2015-04-29 15:37:20"
-        },
-        {
-            "name": "omarabid/wp-options",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/omarabid/wp-options.git",
-                "reference": "f99797a1c0fdf83044228cbf4e279c34e83e9eef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/omarabid/wp-options/zipball/f99797a1c0fdf83044228cbf4e279c34e83e9eef",
-                "reference": "f99797a1c0fdf83044228cbf4e279c34e83e9eef",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "omarabid\\WP_Options\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abid Omar",
-                    "email": "contact@omarabid.com",
-                    "homepage": "http://omarabid.com",
-                    "role": "Lead Developer"
-                }
-            ],
-            "description": "A Fork of the Options Framework",
-            "homepage": "http://omarabid.com",
-            "keywords": [
-                "options",
-                "wordpress"
-            ],
-            "time": "2015-04-30 20:28:48"
-        },
-        {
-            "name": "pippinsplugins/wp-logging",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/omarabid/WP-Logging.git",
-                "reference": "54cfe25c6e92b88c5d467bd9b520560376bc7670"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/omarabid/WP-Logging/zipball/54cfe25c6e92b88c5d467bd9b520560376bc7670",
-                "reference": "54cfe25c6e92b88c5d467bd9b520560376bc7670",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "pippinsplugins\\": ""
-                }
-            },
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Pippin Williamson"
-                }
-            ],
-            "description": "A WordPress class that provides a general logging system.",
-            "homepage": "https://github.com/pippinsplugins/WP-Logging",
-            "keywords": [
-                "log",
-                "logger",
-                "logging",
-                "wordpress"
-            ],
-            "support": {
-                "source": "https://github.com/omarabid/WP-Logging/tree/master"
-            },
-            "time": "2015-04-29 13:30:19"
-        },
         {
             "name": "twig/twig",
             "version": "v1.18.1",
@@ -313,17 +62,223 @@
                 "templating"
             ],
             "time": "2015-04-19 08:30:27"
+        },
+        {
+            "name": "wpplex/wp-autoupdate",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpplex/wp-autoupdate.git",
+                "reference": "e2f63fb2b59ab5d6550c8dacf1cc1cce74a1b735"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpplex/wp-autoupdate/zipball/e2f63fb2b59ab5d6550c8dacf1cc1cce74a1b735",
+                "reference": "e2f63fb2b59ab5d6550c8dacf1cc1cce74a1b735",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "wpplex\\WP_AutoUpdate\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abid Omar",
+                    "email": "contact@omarabid.com",
+                    "homepage": "http://omarabid.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "Create your own self-hosted WordPress Plugin repository for pushing automatic updates.",
+            "homepage": "http://omarabid.com",
+            "keywords": [
+                "auto-update",
+                "wordpress"
+            ],
+            "time": "2015-05-01 17:06:40"
+        },
+        {
+            "name": "wpplex/wp-debugbar",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpplex/wp-debugbar.git",
+                "reference": "ad3622854aa6862963119b96e0ebc8838f7240f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpplex/wp-debugbar/zipball/ad3622854aa6862963119b96e0ebc8838f7240f9",
+                "reference": "ad3622854aa6862963119b96e0ebc8838f7240f9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "wpplex\\WP_DebugBar\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abid Omar",
+                    "email": "contact@omarabid.com",
+                    "homepage": "http://omarabid.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A debugging class for WordPress plugins.",
+            "homepage": "http://omarabid.com",
+            "keywords": [
+                "debugging",
+                "wordpress"
+            ],
+            "time": "2015-05-01 18:30:46"
+        },
+        {
+            "name": "wpplex/wp-mvc",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpplex/wp-mvc.git",
+                "reference": "bb3627b986a8640a881f0c9685a77e1afe82480e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpplex/wp-mvc/zipball/bb3627b986a8640a881f0c9685a77e1afe82480e",
+                "reference": "bb3627b986a8640a881f0c9685a77e1afe82480e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "wpplex\\WP_MVC\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "MVC Framework for WordPress",
+            "homepage": "http://omarabid.com",
+            "keywords": [
+                "mvc",
+                "wordpress"
+            ],
+            "time": "2015-05-01 18:26:21"
+        },
+        {
+            "name": "wpplex/wp-notify",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpplex/wp-notify.git",
+                "reference": "261638beb5055ed58fb41018ab4bcb8847142422"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpplex/wp-notify/zipball/261638beb5055ed58fb41018ab4bcb8847142422",
+                "reference": "261638beb5055ed58fb41018ab4bcb8847142422",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "omarabid\\WP_Notify\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abid Omar",
+                    "email": "contact@omarabid.com",
+                    "homepage": "http://omarabid.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A small notification class to manage your WordPress Admin Notifications.",
+            "homepage": "http://omarabid.com",
+            "keywords": [
+                "notifications",
+                "wordpress"
+            ],
+            "time": "2015-04-29 15:37:20"
+        },
+        {
+            "name": "wpplex/wp-options",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpplex/wp-options.git",
+                "reference": "ee64b4c65e038ea32dccccc7fa331bf15fd3adc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpplex/wp-options/zipball/ee64b4c65e038ea32dccccc7fa331bf15fd3adc7",
+                "reference": "ee64b4c65e038ea32dccccc7fa331bf15fd3adc7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "wpplex\\WP_Options\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abid Omar",
+                    "email": "contact@omarabid.com",
+                    "homepage": "http://omarabid.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A Fork of the Options Framework",
+            "homepage": "http://omarabid.com",
+            "keywords": [
+                "options",
+                "wordpress"
+            ],
+            "time": "2015-05-01 18:25:31"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "pippinsplugins/wp-logging": 20,
-        "omarabid/wp-debugbar": 20,
-        "omarabid/wp-autoupdate": 20,
-        "omarabid/wp-options": 20,
-        "omarabid/wp-mvc": 20
+        "wpplex/wp-debugbar": 20,
+        "wpplex/wp-autoupdate": 20,
+        "wpplex/wp-options": 20,
+        "wpplex/wp-mvc": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
