@@ -82,9 +82,9 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
             $class_name = get_class();
             if ( ! isset( self::$instance ) && ! ( self::$instance instanceof $class_name ) ) {
                 self::$instance = new $class_name;
-                self::$instance->debugging = new \omarabid\WP_DebugBar();
-                self::$instance->logging = new \pippinsplugins\WP_Logging();	
-				self::$instance->app = new \omarabid\WP_MVC\WP_MVC( WPBP_DIR . '/app' );
+                self::$instance->debugging = new \wpplex\WP_DebugBar\WP_DebugBar();
+				self::$instance->options_framework = new \wpplex\WP_Options\WP_Options( 'myoptions' );
+				self::$instance->app = new \wpplex\WP_MVC\WP_MVC( WPBP_DIR . '/app' );
             }
 
             return self::$instance;

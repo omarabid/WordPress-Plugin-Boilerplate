@@ -15,7 +15,7 @@ if ( class_exists( 'BP_Admin_Controller_Page_2' ) ) {
  * @package app/controllers/admin
  * @author Abid Omar
  */
-class BP_Admin_Controller_Page_2 extends \omarabid\WP_MVC\Admin\Controller {
+class BP_Admin_Controller_Page_2 extends \wpplex\WP_MVC\Admin\Controller {
 	/**
 	 * Admin Page Id
 	 * @var string
@@ -66,4 +66,9 @@ class BP_Admin_Controller_Page_2 extends \omarabid\WP_MVC\Admin\Controller {
 	 * @var string
 	 */
 	protected $model = 'BP_Admin_Model_Page_2';
+	public $options_framework;
+
+	public function init() {
+		WPBP()->options_framework->load_resources();
+	}
 }

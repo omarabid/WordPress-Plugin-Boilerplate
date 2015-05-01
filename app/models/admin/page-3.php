@@ -15,7 +15,7 @@ if ( class_exists( 'BP_Admin_Model_Page_3' ) ) {
  * @package app/core
  * @author Abid Omar
  */
-class BP_Admin_Model_Page_3 extends \omarabid\WP_MVC\Admin\Model {
+class BP_Admin_Model_Page_3 extends \wpplex\WP_MVC\Admin\Model {
 	protected $data = array(
 		'title' => 'Sample WP Generated Table',
 	);	

@@ -15,7 +15,7 @@ if ( class_exists( 'BP_Admin_View_Page_3' ) ) {
  * @package app/views
  * @author Abid Omar
  */
-class BP_Admin_View_Page_3 extends \omarabid\WP_MVC\Admin\View {
+class BP_Admin_View_Page_3 extends \wpplex\WP_MVC\Admin\View {
 	/**
 	 * Template filename
 	 *
