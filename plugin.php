@@ -82,10 +82,9 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
             $class_name = get_class();
             if ( ! isset( self::$instance ) && ! ( self::$instance instanceof $class_name ) ) {
                 self::$instance = new $class_name;
-                self::$instance->autoloader = new BP_Autoloader();
-                self::$instance->debugging = new BP_Utils_Debugging();
+                self::$instance->debugging = new \omarabid\WP_DebugBar();
                 self::$instance->logging = new \pippinsplugins\WP_Logging();	
-				self::$instance->app = new BP_MVC( WPBP_DIR . '/app' );
+				self::$instance->app = new \omarabid\WP_MVC\WP_MVC( WPBP_DIR . '/app' );
             }
 
             return self::$instance;
@@ -212,7 +211,6 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
          */
         private function load_dependencies() {
             // Global
-            require_once( 'inc/class-autoloader.php' );	
 			require_once( 'vendor/autoload.php' );
 
             // Admin Panel

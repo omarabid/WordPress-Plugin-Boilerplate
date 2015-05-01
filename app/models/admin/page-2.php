@@ -15,7 +15,7 @@ if ( class_exists( 'BP_Admin_Model_Page_2' ) ) {
  * @package app/core
  * @author Abid Omar
  */
-class BP_Admin_Model_Page_2 extends BP_MVC_Admin_Model {
+class BP_Admin_Model_Page_2 extends \omarabid\WP_MVC\Admin\Model {
 	protected $data = array(
 		'title' => 'Options Framework',	
 	);

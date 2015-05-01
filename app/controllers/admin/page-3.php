@@ -15,7 +15,7 @@ if ( class_exists( 'BP_Admin_Controller_Page_3' ) ) {
  * @package app/controllers/admin
  * @author Abid Omar
  */
-class BP_Admin_Controller_Page_3 extends BP_MVC_Admin_Controller {
+class BP_Admin_Controller_Page_3 extends \omarabid\WP_MVC\Admin\Controller {
 	/**
 	 * Admin Page Id
 	 * @var string

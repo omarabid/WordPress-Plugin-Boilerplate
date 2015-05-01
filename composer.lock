@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/omarabid/Self-Hosted-WordPress-Plugin-repository.git",
-                "reference": "db3081b81c337431856777a6c44c86d501d174da"
+                "reference": "efa746642576138f55a87b65e776fe8e1e363a20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/omarabid/Self-Hosted-WordPress-Plugin-repository/zipball/db3081b81c337431856777a6c44c86d501d174da",
-                "reference": "db3081b81c337431856777a6c44c86d501d174da",
+                "url": "https://api.github.com/repos/omarabid/Self-Hosted-WordPress-Plugin-repository/zipball/efa746642576138f55a87b65e776fe8e1e363a20",
+                "reference": "efa746642576138f55a87b65e776fe8e1e363a20",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "omarabid\\WP_AutoUpdate\\": ""
+                    "omarabid\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -47,7 +47,7 @@
                 "auto-update",
                 "wordpress"
             ],
-            "time": "2015-04-29 17:07:32"
+            "time": "2015-04-30 19:04:03"
         },
         {
             "name": "omarabid/wp-debugbar",
@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/omarabid/wp-debugbar.git",
-                "reference": "46fb265beb27cee6d51bcebecf174ae5c6a23b71"
+                "reference": "6d94068efc0c06a997586e54e5b64e3a877cd10b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/omarabid/wp-debugbar/zipball/46fb265beb27cee6d51bcebecf174ae5c6a23b71",
-                "reference": "46fb265beb27cee6d51bcebecf174ae5c6a23b71",
+                "url": "https://api.github.com/repos/omarabid/wp-debugbar/zipball/6d94068efc0c06a997586e54e5b64e3a877cd10b",
+                "reference": "6d94068efc0c06a997586e54e5b64e3a877cd10b",
                 "shasum": ""
             },
             "require": {
@@ -69,7 +69,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "omarabid\\WP_DebugBar\\": ""
+                    "omarabid\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -90,7 +90,7 @@
                 "debugging",
                 "wordpress"
             ],
-            "time": "2015-04-29 16:35:15"
+            "time": "2015-04-30 19:18:31"
         },
         {
             "name": "omarabid/wp-mvc",
@@ -98,12 +98,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/omarabid/wp-mvc.git",
-                "reference": "76d77d419096bc4c204fb267b190fc415f1832e1"
+                "reference": "ee81d80a7d157b423a2a3574914fffbfc15c4e34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/omarabid/wp-mvc/zipball/76d77d419096bc4c204fb267b190fc415f1832e1",
-                "reference": "76d77d419096bc4c204fb267b190fc415f1832e1",
+                "url": "https://api.github.com/repos/omarabid/wp-mvc/zipball/ee81d80a7d157b423a2a3574914fffbfc15c4e34",
+                "reference": "ee81d80a7d157b423a2a3574914fffbfc15c4e34",
                 "shasum": ""
             },
             "require": {
@@ -125,7 +125,7 @@
                 "mvc",
                 "wordpress"
             ],
-            "time": "2015-04-29 20:33:13"
+            "time": "2015-04-30 19:57:42"
         },
         {
             "name": "omarabid/wp-notify",
@@ -176,12 +176,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/omarabid/wp-options.git",
-                "reference": "f47ee092a36b10c44f233fc9906a25b472186975"
+                "reference": "f99797a1c0fdf83044228cbf4e279c34e83e9eef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/omarabid/wp-options/zipball/f47ee092a36b10c44f233fc9906a25b472186975",
-                "reference": "f47ee092a36b10c44f233fc9906a25b472186975",
+                "url": "https://api.github.com/repos/omarabid/wp-options/zipball/f99797a1c0fdf83044228cbf4e279c34e83e9eef",
+                "reference": "f99797a1c0fdf83044228cbf4e279c34e83e9eef",
                 "shasum": ""
             },
             "require": {
@@ -211,7 +211,7 @@
                 "options",
                 "wordpress"
             ],
-            "time": "2015-04-29 20:16:43"
+            "time": "2015-04-30 20:28:48"
         },
         {
             "name": "pippinsplugins/wp-logging",
