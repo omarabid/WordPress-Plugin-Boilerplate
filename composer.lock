@@ -223,12 +223,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpplex/wp-debugbar.git",
-                "reference": "27b6d45d41c4365afa28adff754fd5a7a62ac8c0"
+                "reference": "be9796b863ad3da06275d103840127fc4ece88d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpplex/wp-debugbar/zipball/27b6d45d41c4365afa28adff754fd5a7a62ac8c0",
-                "reference": "27b6d45d41c4365afa28adff754fd5a7a62ac8c0",
+                "url": "https://api.github.com/repos/wpplex/wp-debugbar/zipball/be9796b863ad3da06275d103840127fc4ece88d6",
+                "reference": "be9796b863ad3da06275d103840127fc4ece88d6",
                 "shasum": ""
             },
             "require": {
@@ -258,7 +258,7 @@
                 "debugging",
                 "wordpress"
             ],
-            "time": "2015-05-01 18:55:24"
+            "time": "2015-05-01 20:10:38"
         },
         {
             "name": "wpplex/wp-mvc",
@@ -266,12 +266,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpplex/wp-mvc.git",
-                "reference": "30658b53cab4f7bfc61fb08887c7348add83677f"
+                "reference": "a330ca29b9cae19b7077ba6b86300410f0255639"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpplex/wp-mvc/zipball/30658b53cab4f7bfc61fb08887c7348add83677f",
-                "reference": "30658b53cab4f7bfc61fb08887c7348add83677f",
+                "url": "https://api.github.com/repos/wpplex/wp-mvc/zipball/a330ca29b9cae19b7077ba6b86300410f0255639",
+                "reference": "a330ca29b9cae19b7077ba6b86300410f0255639",
                 "shasum": ""
             },
             "require": {
@@ -293,7 +293,7 @@
                 "mvc",
                 "wordpress"
             ],
-            "time": "2015-05-01 18:53:40"
+            "time": "2015-05-01 20:11:19"
         },
         {
             "name": "wpplex/wp-notify",
@@ -344,12 +344,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpplex/wp-options.git",
-                "reference": "c77a61f212d2c479ea5e1939439f31932530a49f"
+                "reference": "0f5eef59ec7aab3cb32ff069d31ffdf37629cebf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpplex/wp-options/zipball/c77a61f212d2c479ea5e1939439f31932530a49f",
-                "reference": "c77a61f212d2c479ea5e1939439f31932530a49f",
+                "url": "https://api.github.com/repos/wpplex/wp-options/zipball/0f5eef59ec7aab3cb32ff069d31ffdf37629cebf",
+                "reference": "0f5eef59ec7aab3cb32ff069d31ffdf37629cebf",
                 "shasum": ""
             },
             "require": {
@@ -379,7 +379,7 @@
                 "options",
                 "wordpress"
             ],
-            "time": "2015-05-01 19:40:46"
+            "time": "2015-05-01 20:11:57"
         }
     ],
     "packages-dev": [],
