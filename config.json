@@ -1,0 +1,44 @@
+{
+	"deploy": {
+		"mount_path": "~/Kitematic",
+		"dev_path": "/devl/projectx",
+		"wordpress": {
+			"version": "4.2.2",
+			"username": "admin",
+			"password": "admin",
+			"email": "contact@omarabid.com",
+			"title": "WordPress-Dev",
+			"url": "http://192.168.99.100",
+			"dependencies": {
+				"plugins": [
+					"developer",
+					"debug-bar",
+					"debug-bar-console",
+					"debug-bar-cron",
+					"debug-bar-extender",
+					"rewrite-rules-inspector",
+					"log-deprecated-notices",
+					"log-viewer",
+					"user-switching"
+				],
+				"themes": [
+
+				]
+			},
+			"dev_dependencies": {
+				"plugins": [
+					"https://github.com/omarabid/WordPress-Plugin-Boilerplate.git"
+				],
+				"themes": [
+
+				]
+			}
+		},
+		"mysql": {
+			"database": "wordpress",
+			"username": "root",
+			"password": "dev"
+		}
+
+	}
+}
