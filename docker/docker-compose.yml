@@ -1,27 +1,21 @@
 web:
-  build: nginx/. 
-  ports:
-    - "80:80"
-  links:
-    - php 
-  volumes:
-    - ~/Kitematic/wp:/devl
-    - ~/Kitematic/.tmp/wp:/wp
-  env_file: config.env
-  privileged: true
+    build: nginx/.
+    ports:
+        - '80:80'
+    links:
+        - php
+    volumes:
+        - '~/Kitematic/.tmp/wpbp:/wp'
+    env_file: config.env
 php:
     build: php/.
     ports:
-      - "9000:9000"
+        - '9000:9000'
     links:
-      - db
+        - db
     volumes:
-      - ~/Kitematic/wp:/devl
-      - ~/Kitematic/.tmp/wp:/wp
+        - '~/Kitematic/.tmp/wpbp:/wp'
     env_file: config.env
-    privileged: true
 db:
     build: mysql/.
     env_file: config.env
-    privileged: true
-      
