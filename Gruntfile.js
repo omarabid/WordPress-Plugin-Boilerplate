@@ -83,6 +83,16 @@ module.exports = function( grunt ) {
 						cb();
 					}
 				}
+			},
+			symlink: {
+				command: function() {
+					var cnf = grunt.file.readJSON( 'config.json' );
+					var cmd = [
+						'mkdir -p ' + cnf.deploy.dev_path,
+						'ln -s ' + grunt.config( 'mount_path' ) + ' ' + cnf.deploy.dev_path
+						].join( '&&' );
+						return cmd;
+				}
 			}
 		},
 
@@ -110,9 +120,7 @@ module.exports = function( grunt ) {
 					return config;
 				} )()
 			}		
-		}
-
-		,
+		},
 
 		// Check that textdomain is set
 		checktextdomain: {
@@ -289,9 +297,10 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'generate_env', 'Task', function() {
 		var yml = grunt.file.readYAML( 'docker/docker-compose.yml' ),
 		cnf = grunt.file.readJSON( 'config.json' );
-
+		var mount_path = cnf.deploy.mount_path + "/.tmp/" + grunt.config( 'pkg' ).name;
+		grunt.config( 'mount_path', mount_path );
 		yml.web.volumes = yml.php.volumes = [
-			cnf.deploy.mount_path + "/.tmp/" + grunt.config( 'pkg' ).name + ":/wp"
+			mount_path + ":/wp"
 		];
 		
 		var y = require('yamljs');
@@ -307,5 +316,5 @@ module.exports = function( grunt ) {
 
 	grunt.registerTask( 'setup', [ 'shell:composer_install' ] );
 
-	grunt.registerTask( 'up', [ 'ini-file', 'generate_env', 'shell:docker_setup', 'shell:docker_build', 'shell:docker_up', 'shell:localhost' ] );	
+	grunt.registerTask( 'up', [ 'ini-file', 'generate_env', 'shell:docker_setup', 'shell:docker_build', 'shell:localhost', 'shell:symlink', 'shell:docker_up' ] );	
 };
