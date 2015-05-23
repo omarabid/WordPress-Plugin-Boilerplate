@@ -88,8 +88,9 @@ module.exports = function( grunt ) {
 				command: function() {
 					var cnf = grunt.file.readJSON( 'config.json' );
 					var cmd = [
-						'mkdir -p ' + cnf.deploy.dev_path,
-						'ln -s ' + grunt.config( 'mount_path' ) + ' ' + cnf.deploy.dev_path
+						//'mkdir -p ' + cnf.deploy.dev_path,
+						//'rm -rf ' + cnf.deploy.dev_path,
+						//'ln -s ' + grunt.config( 'mount_path' ) + ' ' + cnf.deploy.dev_path
 						].join( '&&' );
 						return cmd;
 				}
