@@ -1,8 +1,9 @@
 {
 	"deploy": {
 		"mount_path": "~/Kitematic",
-		"dev_path": "/devl/projectx",
+		"dev_path": "/mywp/wpbp",
 		"hostname": "mywp.dev",
+		"docker_machine": "dev",
 		"wordpress": {
 			"version": "latest",
 			"username": "admin",
@@ -27,7 +28,6 @@
 			},
 			"dev_dependencies": {
 				"plugins": [
-					"git@github.com:omarabid/WordPress-Roles-Plugin.git"
 				],
 				"themes": [
 
