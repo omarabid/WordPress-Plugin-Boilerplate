@@ -30,6 +30,8 @@ module.exports = function( grunt ) {
 			docker_setup: {
 				command: function() {
 					var cmd = [
+						var cnf = grunt.file.readJSON( 'config.json' );
+						'eval "$(docker-machine env ' + cnf.deploy.docker_machine + ')"'
 						].join( '&&' );
 						return cmd;
 				}
@@ -54,8 +56,9 @@ module.exports = function( grunt ) {
 			},
 			localhost: {
 				command: function() {
+					var cnf = grunt.file.readJSON( 'config.json' );
 					var cmd = [
-						'docker-machine ip dev'
+						'docker-machine ip ' + cnf.deploy.docker_machine
 						].join( '&&' );
 						return cmd;
 				},
