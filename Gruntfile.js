@@ -26,109 +26,12 @@ module.exports = function( grunt ) {
 						].join( '&&' );
 						return cmd;
 				}
-			},
-			docker_setup: {
-				command: function() {
-					var cmd = [
-						var cnf = grunt.file.readJSON( 'config.json' );
-						'eval "$(docker-machine env ' + cnf.deploy.docker_machine + ')"'
-						].join( '&&' );
-						return cmd;
-				}
-			},
-			docker_build: {
-				command: function() {
-					var cmd = [
-						'cd docker',
-						'docker-compose build'
-						].join( '&&' );
-						return cmd;
-				}
-			},
-			docker_up: {
-				command: function() {
-					var cmd = [
-						'cd docker',
-						'docker-compose up'
-						].join( '&&' );
-						return cmd;
-				}
-			},
-			localhost: {
-				command: function() {
-					var cnf = grunt.file.readJSON( 'config.json' );
-					var cmd = [
-						'docker-machine ip ' + cnf.deploy.docker_machine
-						].join( '&&' );
-						return cmd;
-				},
-				options: {
-					callback: function ( err, stdout, stderr, cb ) {
-						grunt.config( 'machine_ip', stdout );
-						grunt.config( 'localhosts', {
-							set : {
-								options: {
-									rules: [{
-										ip: ( function() {
-											var ip = grunt.config( 'machine_ip' );	
-											return ip;
-										} )(),
-										hostname: ( function() {
-											var cfj = grunt.file.readJSON( 'config.json' );		
-											return cfj.deploy.hostname;
-										} )(),
-										type: 'set'
-									}]
-								}
-							}
-						} );
-						grunt.task.run( [ 'localhosts' ] );
-						cb();
-					}
-				}
-			},
-			symlink: {
-				command: function() {
-					var cnf = grunt.file.readJSON( 'config.json' );
-					var cmd = [
-						//'mkdir -p ' + cnf.deploy.dev_path,
-						//'rm -rf ' + cnf.deploy.dev_path,
-						//'ln -s ' + grunt.config( 'mount_path' ) + ' ' + cnf.deploy.dev_path
-						].join( '&&' );
-						return cmd;
-				}
 			}
-		},
-
-		"ini-file": {
-			docker_env: {
-				file: "docker/config.env", 
-				values: ( function() {
-					var cfj = grunt.file.readJSON( 'config.json' );
-					var config = {
-						"WP_VERSION": cfj.deploy.wordpress.version,
-						"WP_USERNAME": cfj.deploy.wordpress.username,
-						"WP_PASSWORD": cfj.deploy.wordpress.password,
-						"WP_EMAIL": cfj.deploy.wordpress.email,
-						"WP_TITLE": cfj.deploy.wordpress.title,
-						"WP_URL": cfj.deploy.wordpress.url,
-						"WP_PLUGINS": cfj.deploy.wordpress.dependencies.plugins.join( '|' ),
-						"WP_THEMES": cfj.deploy.wordpress.dependencies.themes.join( '|' ),
-						"WP_DEV_THEMES": cfj.deploy.wordpress.dev_dependencies.themes.join( '|' ),
-						"WP_DEV_PLUGINS": cfj.deploy.wordpress.dev_dependencies.plugins.join( '|' ),
-						"MYSQL_DATABASE": cfj.deploy.mysql.database,
-						"MYSQL_USER": cfj.deploy.mysql.username,
-						"MYSQL_PASSWORD": cfj.deploy.mysql.password,
-						"MYSQL_ROOT_PASSWORD": cfj.deploy.mysql.root_password
-					};
-					return config;
-				} )()
-			}		
 		},
 
 		// Check that textdomain is set
 		checktextdomain: {
-			options:{
+			options: {
 				text_domain: 'wpbp',
 				create_report_file: false,
 				keywords: [
@@ -298,27 +201,12 @@ module.exports = function( grunt ) {
 		}
 	});	
 
-	grunt.registerTask( 'generate_env', 'Task', function() {
-		var yml = grunt.file.readYAML( 'docker/docker-compose.yml' ),
-		cnf = grunt.file.readJSON( 'config.json' );
-		var mount_path = cnf.deploy.mount_path + "/.tmp/" + grunt.config( 'pkg' ).name;
-		grunt.config( 'mount_path', mount_path );
-		yml.web.volumes = yml.php.volumes = [
-			mount_path + ":/wp"
-		];
-		
-		var y = require('yamljs');
-		var yamlString = y.stringify( yml, 10 );
-		grunt.file.write('docker/docker-compose.yml', yamlString );
-	} );
-
 	// Register tasks
 	grunt.registerTask( 'default', [ 'makepot', 'potomo', 'clean', 'copy', 'replace', 'compress' ] );
 
 	// Report Broken Textdomain
 	grunt.registerTask( 'report', [ 'checktextdomain' ] );
 
+	// Install Composer Dependencies
 	grunt.registerTask( 'setup', [ 'shell:composer_install' ] );
-
-	grunt.registerTask( 'up', [ 'ini-file', 'generate_env', 'shell:docker_setup', 'shell:docker_build', 'shell:localhost', 'shell:symlink', 'shell:docker_up' ] );	
 };
