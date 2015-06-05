@@ -1,0 +1,462 @@
+# Copyright (C) 2015 Abid Omar
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: PluginBoilerplate {{@version}}\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/plugin\n"
+"POT-Creation-Date: 2015-04-14 13:34:42+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+
+#: Vendors/optionsframework/Adapter.php:25
+#: Vendors/optionsframework/src/includes/class-options-media-uploader.php:67
+#: Vendors/optionsframework/src/includes/class-options-media-uploader.php:120
+msgid "Upload"
+msgstr ""
+
+#: Vendors/optionsframework/Adapter.php:26
+#: Vendors/optionsframework/src/includes/class-options-media-uploader.php:69
+#: Vendors/optionsframework/src/includes/class-options-media-uploader.php:121
+msgid "Remove"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-framework-admin.php:65
+msgid ""
+"Your current theme does not have support for the Options Framework plugin.  "
+"<a href=\"%1$s\" target=\"_blank\">Learn More</a> | <a href=\"%2$s\">Hide "
+"Notice</a>"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-framework-admin.php:122
+#: Vendors/optionsframework/src/includes/class-options-framework-admin.php:123
+msgid "Theme Options"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-framework-admin.php:241
+#: inc/options/options-template.php:13
+msgid "Save Options"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-framework-admin.php:242
+#: inc/options/options-template.php:14
+msgid "Restore Defaults"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-framework-admin.php:242
+#: inc/options/options-template.php:14
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-framework-admin.php:273
+msgid "Default options restored."
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-framework-admin.php:327
+msgid "Options saved."
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-media-uploader.php:64
+msgid "No file chosen"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-media-uploader.php:72
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-media-uploader.php:96
+msgid "View File"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:317
+msgid "No Repeat"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:318
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:319
+msgid "Repeat Vertically"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:320
+msgid "Repeat All"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:332
+msgid "Top Left"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:333
+msgid "Top Center"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:334
+msgid "Top Right"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:335
+msgid "Middle Left"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:336
+msgid "Middle Center"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:337
+msgid "Middle Right"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:338
+msgid "Bottom Left"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:339
+msgid "Bottom Center"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:340
+msgid "Bottom Right"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:352
+msgid "Scroll Normally"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:353
+msgid "Fixed in Place"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:425
+msgid "Normal"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:426
+msgid "Italic"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:427
+msgid "Bold"
+msgstr ""
+
+#: Vendors/optionsframework/src/includes/class-options-sanitization.php:428
+msgid "Bold Italic"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:32 plugin.php:86
+msgid "One"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:33 plugin.php:87
+msgid "Two"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:34 plugin.php:88
+msgid "Three"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:35 plugin.php:89
+msgid "Four"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:36 plugin.php:90
+msgid "Five"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:41 plugin.php:94
+msgid "French Toast"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:42 plugin.php:95
+msgid "Pancake"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:43 plugin.php:96
+msgid "Omelette"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:44 plugin.php:97
+msgid "Crepe"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:45 plugin.php:98
+msgid "Waffle"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:105 plugin.php:148
+msgid "Basic Settings"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:109 plugin.php:152
+msgid "Input Text Mini"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:110 plugin.php:153
+msgid "A mini text input field."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:117 plugin.php:160
+msgid "Input Text"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:118 plugin.php:161
+msgid "A text input field."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:124 plugin.php:174
+msgid "Textarea"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:125 plugin.php:175
+msgid "Textarea description."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:131 plugin.php:181
+msgid "Input Select Small"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:132 plugin.php:182
+msgid "Small Select Box."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:140 plugin.php:190
+msgid "Input Select Wide"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:141 plugin.php:191
+msgid "A wider select box."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:148 plugin.php:199
+msgid "Select a Category"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:149 plugin.php:200
+msgid "Passed an array of categories with cat_ID and cat_name"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:156 plugin.php:208
+msgid "Select a Tag"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:157 plugin.php:209
+msgid "Passed an array of tags with term_id and term_name"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:164 plugin.php:216
+msgid "Select a Page"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:165
+msgid "Passed an array of pages with ID and post_title"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:171 plugin.php:223
+msgid "Input Radio (one)"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:172 plugin.php:224
+msgid "Radio select with default options \"one\"."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:179 plugin.php:231
+msgid "Example Info"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:180 plugin.php:232
+msgid "This is just some example information you can put in the panel."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:184 plugin.php:236
+msgid "Input Checkbox"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:185 plugin.php:237
+msgid "Example checkbox, defaults to true."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:191 plugin.php:243
+msgid "Advanced Settings"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:195 plugin.php:247
+msgid "Check to Show a Hidden Text Input"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:196 plugin.php:248
+msgid "Click here and see what happens."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:201 plugin.php:253
+msgid "Hidden Text Input"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:202 plugin.php:254
+msgid "This option is hidden unless activated by a checkbox click."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:209 plugin.php:261
+msgid "Uploader Test"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:210 plugin.php:262
+msgid "This creates a full size uploader that previews the image."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:227 plugin.php:279
+msgid "Example Background"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:228 plugin.php:280
+msgid "Change the background CSS."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:234 plugin.php:286
+msgid "Multicheck"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:235 plugin.php:287
+msgid "Multicheck description."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:242 plugin.php:294
+msgid "Colorpicker"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:243 plugin.php:295
+msgid "No color selected by default."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:248 plugin.php:300
+msgid "Typography"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:249 plugin.php:301
+msgid "Example typography."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:255 plugin.php:307
+msgid "Custom Typography"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:256 plugin.php:308
+msgid "Custom typography options."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:263 plugin.php:315
+msgid "Text Editor"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:281 plugin.php:331
+msgid "Default Text Editor"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:282 plugin.php:332
+msgid ""
+"You can also pass settings to the editor.  Read more about wp_editor in <a "
+"href=\"%1$s\" target=\"_blank\">the WordPress codex</a>"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:294
+msgid "Additional Text Editor"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-check/options.php:295
+msgid "This editor includes media button."
+msgstr ""
+
+#: Vendors/optionsframework/src/options-theme-customizer/options.php:101
+msgid "Basic"
+msgstr ""
+
+#: Vendors/optionsframework/src/options-theme-customizer/options.php:158
+msgid "Extended"
+msgstr ""
+
+#: admin/pages/page2.php:6 build/wpbp/admin/pages/page2.php:6
+msgid "WP Admin Table"
+msgstr ""
+
+#: admin/tables.php:142 build/wpbp/admin/tables.php:142
+msgid "Items"
+msgstr ""
+
+#: admin/tables.php:143 build/wpbp/admin/tables.php:143
+msgid "Item"
+msgstr ""
+
+#: admin/tables.php:162 build/wpbp/admin/tables.php:162
+msgid "Search"
+msgstr ""
+
+#: admin/tables.php:218 build/wpbp/admin/tables.php:218
+msgid "All"
+msgstr ""
+
+#: admin/tables.php:222 build/wpbp/admin/tables.php:222
+msgid "Filter 1"
+msgstr ""
+
+#: admin/tables.php:226 build/wpbp/admin/tables.php:226
+msgid "Filter 2"
+msgstr ""
+
+#: build/wpbp/inc/utils/class-logging.php:157 inc/utils/class-logging.php:157
+msgid "Logs"
+msgstr ""
+
+#: build/wpbp/inc/utils/debugbar/views/view-main.php:1
+#: inc/utils/debugbar/views/view-main.php:1
+msgid "Registered Constants"
+msgstr ""
+
+#: build/wpbp/inc/widgets/class-main.php:20 inc/widgets/class-main.php:20
+msgid "A boilerplate widget"
+msgstr ""
+
+#: build/wpbp/inc/widgets/class-main.php:33
+#: build/wpbp/inc/widgets/class-main.php:37 inc/widgets/class-main.php:33
+#: inc/widgets/class-main.php:37
+msgid "Field"
+msgstr ""
+
+#: build/wpbp/plugin.php:148 plugin.php:404
+msgid "Cloning instances of the class is forbidden."
+msgstr ""
+
+#: build/wpbp/plugin.php:160 plugin.php:416
+msgid "Unserializing instances of the class is forbidden."
+msgstr ""
+
+#: plugin.php:167
+msgid "Input with Placeholder"
+msgstr ""
+
+#: plugin.php:168
+msgid "A text input field with an HTML5 placeholder."
+msgstr ""
+
+#: plugin.php:217
+msgid "Passed an pages with ID and post_title"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "PluginBoilerplate"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://omarabid.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Plugin Description."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Abid Omar"
+msgstr ""

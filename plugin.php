@@ -2,7 +2,7 @@
 /**
  * WordPress Plugin BoilerPlate
  *
- * @version 1.0.0
+ * @version {{@version}}
  * @package Main
  * @author Abid Omar
  */
@@ -12,259 +12,271 @@
   Description: Plugin Description.
   Author: Abid Omar
   Author URI: http://omarabid.com
-  Version: 1.0.0
-  Text Domain: wp-pb
+  Version: {{@version}}
+  Text Domain: wpbp
   License: GPLv3
  */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+    exit;
 }
 
 if ( ! class_exists( 'BoilerPlate' ) ) {
-	/**
-	 * The main class and initialization point of the plugin.
-	 * Change the class name to XxxYxx where it relates to your
-	 * plugin name. Try to avoid using popular and common words
-	 * to avoid collusion with other plugins.
-	 */
-	final class BoilerPlate {
+    /**
+     * The main class and initialization point of the plugin.
+     * Change the class name to XxxYxx where it relates to your
+     * plugin name. Try to avoid using popular and common words
+     * to avoid collusion with other plugins.
+     */
+    final class BoilerPlate {
 
-		/**
-		 * The only instance of the class
-		 *
-		 * @var BoilerPlate
-		 * @since 1.0
-		 */
-		private static $instance;
+        /**
+         * The only instance of the class
+         *
+         * @var BoilerPlate
+         * @since 1.0
+         */
+        private static $instance;
 
-		/**
-		 * The Plug-in version.
-		 *
-		 * @var string
-		 * @since 1.0
-		 */
-		public $version = "1.0";
+        /**
+         * The Plug-in version.
+         *
+         * @var string
+         * @since 1.0
+         */
+        public $version = '{{@version}}';
 
-		/**
-		 * The minimal required version of WordPress for this plug-in to function correctly.
-		 *
-		 * @var string
-		 * @since 1.0
-		 */
-		public $wp_version = "4.0";
+        /**
+         * The minimal required version of WordPress for this plug-in to function correctly.
+         *
+         * @var string
+         * @since 1.0
+         */
+        public $wp_version = '4.0';
 
-		/**
-		 * Class name
-		 *
-		 * @var string
-		 * @since 1.0
-		 */
-		public $class_name;
+        /**
+         * Class name
+         *
+         * @var string
+         * @since 1.0
+         */
+        public $class_name;
 
-		/**
-		 * Create a new instance of the main class
-		 *
-		 * @since 1.0
-		 * @static
-		 * @return BoilerPlate
-		 */
-		public static function instance() {
-			$class_name = get_class();
-			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof $class_name ) ) {
-				self::$instance = new $class_name;
-			}
+        /**
+         * An array of defined constants names
+         *
+         * @var array
+         * @since 1.0
+         */
+        public $defined_constants;
 
-			return self::$instance;
-		}
+        /**
+         * Create a new instance of the main class
+         *
+         * @since 1.0
+         * @static
+         * @return BoilerPlate
+         */
+        public static function instance() {
+            $class_name = get_class();
+            if ( ! isset( self::$instance ) && ! ( self::$instance instanceof $class_name ) ) {
+                self::$instance = new $class_name;
+                self::$instance->debugging = new \wpplex\WP_DebugBar\WP_DebugBar();
+				self::$instance->options_framework = new \wpplex\WP_Options\WP_Options( 'myoptions' );
+				self::$instance->app = new \wpplex\WP_MVC\WP_MVC( WPBP_DIR . '/app' );
+            }
 
-		/**
-		 * Construct and start the other plug-in functionality
-		 *
-		 * @since 1.0
-		 * @public
-		 */
-		public function __construct() {
-			// Save the class name for later use
-			$this->class_name = get_class();
+            return self::$instance;
+        }
 
-			//
-			// 1. Plug-in requirements
-			//
-			if ( ! $this->check_requirements() ) {
-				return;
-			}
+        /**
+         * Construct and start the other plug-in functionality
+         *
+         * @since 1.0
+         * @public
+         */
+        public function __construct() {
+            // Save the class name for later use
+            $this->class_name = get_class();
 
-			//
-			// 2. Declare constants and load dependencies
-			//
-			$this->define_constants();
-			$this->load_dependencies();
+            //
+            // 1. Plug-in requirements
+            //
+            if ( ! $this->check_requirements() ) {
+                return;
+            }
 
-			//
-			// 3. Activation Hooks
-			//
-			register_activation_hook( __FILE__, array( &$this, 'activate' ) );
-			register_deactivation_hook( __FILE__, array( &$this, 'deactivate' ) );
-			// TODO: Fix this
-			register_uninstall_hook( __FILE__, 'wp_pb::uninstall' );
+            //
+            // 2. Declare constants and load dependencies
+            //
+            $this->define_constants();
+            $this->load_dependencies();
 
-			//
-			// 4. Load Widget
-			//
-			add_action( 'widgets_init', array( &$this, 'register_widget' ) );
+            //
+            // 3. Activation Hooks
+            //
+            register_activation_hook( __FILE__, array( &$this, 'activate' ) );
+            register_deactivation_hook( __FILE__, array( &$this, 'deactivate' ) );	
 
-			//
-			// 5. i18n
-			//
-			add_action( 'init', array( &$this, 'i18n' ) );
+            //
+            // 4. i18n
+            //
+            add_action( 'init', array( &$this, 'i18n' ) );
 
-			//
-			// 6. Actions
-			//
-			add_action( 'plugins_loaded', array( &$this, 'start' ) );
-		}
+            //
+            // 5. Actions
+            //
+            add_action( 'plugins_loaded', array( &$this, 'start' ), 0, 100 );
+        }
 
-		/**
-		 * Throw error on object clone.
-		 *
-		 * Cloning instances of the class is forbidden.
-		 *
-		 * @since 1.0
-		 * @return void
-		 */
-		public function __clone() {
-			_doing_it_wrong( __FUNCTION__, __( 'Cloning instances of the class is forbidden.', 'wp-bp' ), '1.0' );
-		}
+        /**
+         * Throw error on object clone.
+         *
+         * Cloning instances of the class is forbidden.
+         *
+         * @since 1.0
+         * @return void
+         */
+        public function __clone() {
+            _doing_it_wrong( __FUNCTION__, __( 'Cloning instances of the class is forbidden.', 'wp-bp' ), '1.0' );
+        }
 
-		/**
-		 * Disable unserializing of the class
-		 *
-		 * Unserializing instances of the class is forbidden.
-		 *
-		 * @since 1.0
-		 * @return void
-		 */
-		public function __wakeup() {
-			_doing_it_wrong( __FUNCTION__, __( 'Unserializing instances of the class is forbidden.', 'wp-bp' ), '1.0' );
-		}
+        /**
+         * Disable unserializing of the class
+         *
+         * Unserializing instances of the class is forbidden.
+         *
+         * @since 1.0
+         * @return void
+         */
+        public function __wakeup() {
+            _doing_it_wrong( __FUNCTION__, __( 'Unserializing instances of the class is forbidden.', 'wp-bp' ), '1.0' );
+        }
 
-		/**
-		 * Checks that the WordPress setup meets the plugin requirements
-		 * @global string $wp_version
-		 * @return boolean
-		 */
-		private function check_requirements() {
-			global $wp_version;
-			if ( ! version_compare( $wp_version, $this->wp_version, '>=' ) ) {
-				add_action( 'admin_notices', array( &$this, 'display_req_notice' ) );
+        /**
+         * Checks that the WordPress setup meets the plugin requirements
+         * @global string $wp_version
+         * @return boolean
+         */
+        private function check_requirements() {
+            global $wp_version;
+            if ( ! version_compare( $wp_version, $this->wp_version, '>=' ) ) {
+                add_action( 'admin_notices', array( &$this, 'display_req_notice' ) );
 
-				return false;
-			}
+                return false;
+            }
 
-			return true;
-		}
+            return true;
+        }
 
-		/**
-		 * Display the requirement notice
-		 * @static
-		 */
-		public function display_req_notice() {
-			echo '<div id="message" class="error"><p><strong>';
-			echo __( 'Sorry, PluginBoilerPlate requires WordPress ' . $this->wp_version . ' or higher.
+        /**
+         * Display the requirement notice
+         * @static
+         */
+        public function display_req_notice() {
+            echo '<div id="message" class="error"><p><strong>';
+            echo __( 'Sorry, PluginBoilerPlate requires WordPress ' . $this->wp_version . ' or higher.
                 Please upgrade your WordPress setup', 'wp-pb' );
-			echo '</strong></p></div>';
-		}
+            echo '</strong></p></div>';
+        }
 
-		/**
-		 * Define constants needed across the plug-in.
-		 */
-		private function define_constants() {
-			$this->define( 'BP_FILE', __FILE__ );
-			$this->define( 'BP_BASENAME', plugin_basename( __FILE__ ) );
-			$this->define( 'BP_DIR', dirname( __FILE__ ) );
-			$this->define( 'BP_FOLDER', plugin_basename( dirname( __FILE__ ) ) );
-			$this->define( 'BP_ABSPATH', trailingslashit( str_replace( "\\", "/", WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) ) ) );
-			$this->define( 'BP_URLPATH', trailingslashit( WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) ) );
-			$this->define( 'BP_ADMINPATH', get_admin_url() );	
-		}
+        /**
+         * Define constants needed across the plug-in.
+         */
+        private function define_constants() {
+            $this->define( 'WPBP_FILE', __FILE__ );
+            $this->define( 'WPBP_BASENAME', plugin_basename( __FILE__ ) );
+            $this->define( 'WPBP_DIR', dirname( __FILE__ ) );
+            $this->define( 'WPBP_FOLDER', plugin_basename( dirname( __FILE__ ) ) );
+            $this->define( 'WPBP_ABSPATH', trailingslashit( str_replace( '\\', '/', WP_PLUGIN_DIR . '/' . plugin_basename( dirname( __FILE__ ) ) ) ) );
+            $this->define( 'WPBP_URLPATH', trailingslashit( WP_PLUGIN_URL . '/' . plugin_basename( dirname( __FILE__ ) ) ) );
+            $this->define( 'WPBP_ADMINPATH', get_admin_url() );	
+        }
 
-		/**
-		 * Define constant if not already set
-		 * @param  string $name
-		 * @param  string|bool $value
-		 */
-		private function define( $name, $value ) {
-			if ( ! defined( $name ) ) {
-				define( $name, $value );
-			}
-		}
+        /**
+         * Define constant if not already set
+         * @param  string $name
+         * @param  string|bool $value
+         */
+        private function define( $name, $value ) {
+            if ( ! defined( $name ) ) {
+                define( $name, $value );
+                $this->defined_constants[] = $name;
+            }
+        }
 
-		/**
-		 * Loads PHP files that required by the plug-in
-		 */
-		private function load_dependencies() {
-			// Admin Panel
-			if ( is_admin() ) {
-				require_once( 'admin/forms.php' );
-				require_once( 'admin/notifications.php' );
-				require_once( 'admin/tables.php' );
-				require_once( 'admin/admin.php' );
-			}
-			// Front-End Site
-			if ( ! is_admin() ) {
+        /**
+         * Loads PHP files that required by the plug-in
+         */
+        private function load_dependencies() {
+            // Global
+			require_once( 'vendor/autoload.php' );
 
-			}
-			// Global
-			require_once( 'inc/widget.php' );
-		}
+            // Admin Panel
+            if ( is_admin() ) {
+            
+            }
 
-		/**
-		 * Called every time the plug-in is activated.
-		 */
-		public function activate() {
+            // Front-End Site
+            if ( ! is_admin() ) {
 
-		}
+            }
+        }
 
-		/**
-		 * Called when the plug-in is deactivated.
-		 */
-		public function deactivate() {
+        /**
+         * Called every time the plug-in is activated.
+         */
+        public function activate() {
 
-		}
+        }
 
-		/**
-		 * Called when the plug-in is uninstalled
-		 */
-		static function uninstall() {
+        /**
+         * Called when the plug-in is deactivated.
+         */
+        public function deactivate() {
 
-		}
+        }
 
-		/**
-		 * Register the widgets
-		 */
-		public function register_widget() {
-			register_widget( "wp_pb_widget" );
-		}
+        /**
+         * Internationalization.
+         * Loads the plugin language files
+         *
+         * @access public
+         * @return void
+         */
+        public function i18n() {
+            // Set filter for plugin's languages directory
+            $lang_dir = WPBP_FOLDER . '/i18n/languages/';
+            $lang_dir = apply_filters( 'bp_languages_directory', $lang_dir );
 
+            // Traditional WordPress plugin locale filter
+            $locale = apply_filters( 'plugin_locale', get_locale(), 'wpbp' );
+            $mofile        = sprintf( '%1$s-%2$s.mo', 'wpbp', $locale );
 
-		/**
-		 * Internationalization
-		 */
-		public function i18n() {
-			load_plugin_textdomain( 'wp-pb', false, basename( dirname( __FILE__ ) ) . '/lang/' );
-		}
+            // Setup paths to current locale file
+            $mofile_local  = $lang_dir . $mofile;
+            $mofile_global = WP_LANG_DIR . '/wpbp/' . $mofile;
 
-		/**
-		 * Starts the plug-in main functionality
-		 */
-		public function start() {
+            if ( file_exists( $mofile_global ) ) {
+                // Look in global /wp-content/languages/wpbp folder
+                load_textdomain( 'wpbp', $mofile_global );
+            } elseif ( file_exists( $mofile_local ) ) {
+                // Look in local /wp-content/plugins/wpbp/languages/ folder
+                load_textdomain( 'wpbp', $mofile_local );
+            } else {
+                // Load the default language files
+                load_plugin_textdomain( 'wpbp', false, $lang_dir );
+            }
+        }
 
-		}
+        /**
+         * Starts the plug-in main functionality
+         */
+        public function start() {
+        }
 
-
-	}
+    }
 
 }
 
@@ -272,7 +284,7 @@ if ( ! class_exists( 'BoilerPlate' ) ) {
  * Creates a new instance of the BoilerPlate Class
  */
 function WPBP() {
-	return BoilerPlate::instance();
+    return BoilerPlate::instance();
 }
 
 WPBP();
